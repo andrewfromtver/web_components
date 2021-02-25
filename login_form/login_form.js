@@ -2,7 +2,7 @@ let usernames = []
 
 window.onload = () => {
     document.title = 'Login'
-    usernames = ['andrewsarkisyan@gmail.com', '222', '333']
+    usernames = ['andrewfromtver', '222', '333']
 }
 
 
