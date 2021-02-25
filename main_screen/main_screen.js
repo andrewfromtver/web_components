@@ -7,12 +7,12 @@ window.onload = () => {
         userInfo()
     }
     else {
-        window.location = '/login_form'
+        window.location = '/web_components/login_form'
     }
 }
 // user info block
 userInfo = () => {
-    window.location = '/main_screen/#user_info'
+    window.location = '/web_components/main_screen/#user_info'
     document.title = 'User information'
     document.querySelector('.content').innerHTML = `
     <div class="container">
@@ -145,25 +145,25 @@ saveUserContacts = () => {
 
 
 logoutRequest = () => {
-    window.location = '/login_form'
+    window.location = '/web_components/login_form'
     sessionStorage.removeItem('userData')
 }
 
 home = () => {
-    window.location = '/main_screen/#home'
+    window.location = '/web_components/main_screen/#home'
     document.title = 'Home'
     document.querySelector('.content').innerHTML = ``
 }
 
 activities = () => {
-    window.location = '/main_screen/#activities'
+    window.location = '/web_components/main_screen/#activities'
     document.title = 'Activities'
     document.querySelector('.content').innerHTML = ``
 }
 
 // contacts block
 contacts = () => {
-    window.location = '/main_screen/#contacts'
+    window.location = '/web_components/main_screen/#contacts'
     document.title = 'Contacts'
     document.querySelector('.content').innerHTML = `
         <div class="container">
