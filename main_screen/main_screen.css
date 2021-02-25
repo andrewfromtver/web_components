@@ -82,7 +82,7 @@ body {
     height: auto;
     background-color: #ffffff;
     box-shadow: 2px 2px 15px #333333;
-    animation: backInRight;
+    animation: fadeIn;
     animation-duration: 1s;
     opacity: 0.95;
 }

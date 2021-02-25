@@ -1,5 +1,6 @@
+// global variable
 let userData = {}
-
+// init
 window.onload = () => {
     if (sessionStorage.userData) {
         userData = JSON.parse(sessionStorage.userData)
@@ -9,10 +10,10 @@ window.onload = () => {
         window.location = '/login_form'
     }
 }
-
+// user info block
 userInfo = () => {
-    document.querySelector('.content').innerHTML = ``
     window.location = '/main_screen/#user_info'
+    document.title = 'User information'
     document.querySelector('.content').innerHTML = `
     <div class="container">
         <br>
@@ -112,7 +113,6 @@ userInfo = () => {
     document.querySelector('#site').value  = userData.site
     document.querySelector('#social').value  = userData.social
 }
-
 saveUserData = () => {
     userData.name = document.querySelector('#name').value
     userData.surname = document.querySelector('#surname').value
@@ -121,7 +121,6 @@ saveUserData = () => {
 
     sessionStorage.setItem('userData', JSON.stringify(userData))
 }
-
 changeUserTariff = (monthly = true) => {
     if (monthly) {
         userData.subscribed = true
@@ -135,7 +134,6 @@ changeUserTariff = (monthly = true) => {
     }
     sessionStorage.setItem('userData', JSON.stringify(userData))
 }
-
 saveUserContacts = () => {
     userData.phone = document.querySelector('#phone').value
     userData.email = document.querySelector('#email').value
@@ -145,6 +143,7 @@ saveUserContacts = () => {
     sessionStorage.setItem('userData', JSON.stringify(userData))
 }
 
+
 logoutRequest = () => {
     window.location = '/login_form'
     sessionStorage.removeItem('userData')
@@ -152,12 +151,64 @@ logoutRequest = () => {
 
 home = () => {
     window.location = '/main_screen/#home'
+    document.title = 'Home'
+    document.querySelector('.content').innerHTML = ``
 }
 
 activities = () => {
     window.location = '/main_screen/#activities'
+    document.title = 'Activities'
+    document.querySelector('.content').innerHTML = ``
 }
 
+// contacts block
 contacts = () => {
     window.location = '/main_screen/#contacts'
+    document.title = 'Contacts'
+    document.querySelector('.content').innerHTML = `
+        <div class="container">
+            <br>
+            <div class="title">Contacts</div>
+            <br>
+            <div class="about">
+                Please contact us if you have any questions. 
+                We work from 10 am to 7 pm Moscow time and are ready to answer any questions you may have. 
+                If you want to get a consultation outside working hours, please use our monthly subscription.
+            </div>
+            <br>
+            <div class="userinfo">
+                <img src="./contacts.png" alt="onetime">
+                <div class="userdata">
+                    <div>Phone</div>
+                    <input id="phone" disabled></input>
+                    <div>E-mail</div>
+                    <input id="email" disabled></input>
+                    <div>Website link</div>
+                    <input id="site" disabled></input>
+                    <div>Social network link</div>
+                    <input id="social" disabled></input>
+                </div>
+            </div>
+            <br>
+        </div>
+        <div class="container">
+            <br>
+            <div class="title">Our headquarters</div>
+            <br>
+            <iframe 
+                id="map" 
+                width="100%" 
+                height="400px" 
+                frameborder="0" 
+                scrolling="no" 
+                src="https://www.openstreetmap.org/export/embed.html?bbox=35.834464,56.83654,35.864464,56.86654&amp;layer=mapquest&amp;marker=56.85154,35.849464"
+            ></iframe>
+            <br>
+        </div>
+    `
+
+    document.querySelector('#phone').value  = '+7 900 012 44 17'
+    document.querySelector('#email').value  = 'andrewsarkisyan@gmail.com'
+    document.querySelector('#site').value  = 'https://andrewsarkisyan.com'
+    document.querySelector('#social').value  = 'https://vk.com/id_69_tver'
 }
