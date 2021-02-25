@@ -31,7 +31,7 @@ loginRequest = () => {
             sessionStorage.setItem('userData', JSON.stringify(userData))
             document.querySelector('.container').remove()
             document.querySelector('.help').remove()
-            window.location = '/main_screen/#user_info'
+            window.location = '/web_components/main_screen/#user_info'
         }, 450)
     }
     else {
