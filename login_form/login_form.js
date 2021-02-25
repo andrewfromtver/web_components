@@ -1,6 +1,9 @@
 let usernames = []
 
 window.onload = () => {
+    if (sessionStorage.userData) {
+        window.location = '/web_components/main_screen'
+    }
     document.title = 'Login'
     usernames = ['andrewfromtver']
 }
