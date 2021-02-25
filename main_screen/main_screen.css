@@ -12,7 +12,7 @@ body {
     width: 100vw;
     margin: 0;
     padding: 0;
-    background-image: url('/bg.jpg');
+    background-image: url('/web_components/bg.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
