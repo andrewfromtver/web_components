@@ -1,7 +1,7 @@
 let usernames = []
 
 window.onload = () => {
-    usernames = ['111', '222', '333']
+    usernames = ['andrewsarkisyan@gmail.com', '222', '333']
 }
 
 
@@ -16,6 +16,18 @@ loginRequest = () => {
     if (usernames.includes(username.value) && password.value) {
         document.querySelector('.container').classList.add('animate__animated', 'animate__bounceOutLeft');
         setTimeout(() => {
+            let userData = {
+                'name': 'Jhon',
+                'surname': 'Doe',
+                'age': 33,
+                'ocupation': 'Project manager',
+                'subscribed': true,
+                'phone': '+7 900 111 22 33',
+                'email': 'email@company.com',
+                'site': 'https://demo.com',
+                'social': 'https://link.to_social_network'
+            }
+            sessionStorage.setItem('userData', JSON.stringify(userData))
             document.querySelector('.container').remove()
             document.querySelector('.help').remove()
             window.location = '/main_screen/#user_info'
