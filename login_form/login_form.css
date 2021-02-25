@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
+* {
+    font-family: 'Oswald', cursive;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-image: url('/bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.container {
+    background-color: #ffffff;
+    width: 100vw;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 0;
+    box-shadow: 0 0 50px #333333;
+    border-radius: 4px;
+    opacity: 0.93;
+    animation: bounceInDown;
+    animation-duration: 1s;
+}
+
+.title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 25px;
+}
+
+input, button {
+    border: none;
+    outline: none;
+    border-radius: 0px;
+}
+
+input {
+    height: 35px;
+    margin: 10px 0;
+    border-bottom: 2px solid #aaaaaa;
+    background-color: #eeeeee;
+    padding: 0 25px;
+}
+
+input:active, input:focus, input:hover {
+    box-shadow: 0 5px 25px #aaaaaa;
+}
+
+input:focus {
+    border-bottom: 2px solid #0589ed;
+}
+
+button {
+    height: 35px;
+    margin: 5px 0;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+#login, #create {
+    background-color: #0589ed;
+}
+#login:active, #create:active {
+    background-color: #ffffff;
+    color: #0589ed;
+}
+
+#request, #cancel {
+    background-color: #7a98af;
+}
+#request:active, #calcel:active {
+    background-color: #ffffff;
+    color: #7a98af;
+}
+
+button:active, button:focus, button:hover {
+    box-shadow: 0 5px 25px #aaaaaa;
+}
+
+.help > img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    margin: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 50px #333333;
+    opacity: 0.93;
+}
+
+.help > img:active {
+    width: 40px;
+    height: 40px;
+    margin: 30px;
+    box-shadow: none;
+}
+
+.help > img:hover, .help > img:focus {
+    box-shadow: 0 0 50px #aaaaaa;
+}
+
+.about {
+    padding: 0 10px;
+    text-indent: 15px;
+}

@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
+* {
+    font-family: 'Oswald', cursive;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-image: url('/bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.navbar {
+    height: 45px;
+    background-color: #333333;
+    color: #ffffff;
+    box-shadow: 2px 2px 15px #333333;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.navlinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 900px;
+}
+
+.navlink {
+    cursor: pointer;
+    width: 30%;
+    text-align: center;
+    margin: 10px;
+    border: 1px solid #666666;
+    box-shadow: 2px 2px 15px #444444;
+}
+
+.navlink:hover {
+    box-shadow: 2px 2px 15px #666666;
+}
+
+.navlink:active {
+    box-shadow: none;
+    border: none;
+    margin: 11px;
+    color: #666666;
+}
+
+.logout, .user {
+    padding: 10px;
+}
+
+.logout > img, .user > img {
+    height: 25px;
+    width: 25px;
+    border-radius: 25%;
+    box-shadow: 2px 2px 15px #666666;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+.container {
+    margin: 20px auto;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 15px #333333;
+    animation: backInRight;
+    animation-duration: 1s;
+    opacity: 0.95;
+}
+
+.title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.about {
+    padding: 0 20px;
+    text-indent: 15px;
+}
+
+.userinfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.userinfo > img {
+    height: 272px;
+    width: 250px;
+    margin: 0 20px 5px 0;
+}
+
+.userdata {
+    padding: 0 20px 0 0;
+}
+
+.actionstab {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+input, button {
+    border: none;
+    outline: none;
+    border-radius: 0px;
+    width: 250px;
+}
+
+input {
+    height: 35px;
+    margin: 5px 0;
+    border-bottom: 2px solid #aaaaaa;
+    background-color: #eeeeee;
+    padding: 0 5px;
+}
+
+input:active, input:focus, input:hover {
+    box-shadow: 0 5px 25px #aaaaaa;
+}
+
+input:focus {
+    border-bottom: 2px solid #0589ed;
+}
+
+button {
+    margin: 5px 0;
+    height: 35px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+button:hover {
+    box-shadow: 0 5px 25px #aaaaaa;
+}
+
+#save {
+    background-color: #0589ed;
+}
+#save:active {
+    background-color: #ffffff;
+    color: #0589ed;
+}
+
+#clear {
+    background-color: #7a98af;
+}
+#clear:active {
+    background-color: #ffffff;
+    color: #7a98af;
+}
+
+.tariff {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 0 40px 0;
+}
+
+.tariff > div {
+    text-align: center;
+    border: 1px solid #aaaaaa;
+    width: 40%;
+    height: 250px;
+    cursor: pointer;
+}
+
+.tariff > div:hover {
+    box-shadow: 0 5px 25px #aaaaaa;
+}
+
+.tariff > div:active {
+    box-shadow: 0 5px 25px #0589ed;
+}
+
+.tariff > div > img {
+    height: 100%;
+    width: 100%;
+}
+
+.copyright {
+    width: 100%;
+    background-color: #333333;
+    color: #ffffff;
+    height: 20px;
+    text-align: center;
+    opacity: 0.75;
+    font-size: 10px;
+    padding: 5px 0 0 0;
+}

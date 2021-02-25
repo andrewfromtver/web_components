@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./main_screen.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="navlinks">
+                <div onclick="home()" class="navlink">
+                    Home
+                </div>
+                <div onclick="activities()" class="navlink">
+                    Activities
+                </div>
+                <div onclick="contacts()" class="navlink">
+                    Contacts
+                </div>
+                <div class="user">
+                    <img onclick="userInfo()" src="./user.png" alt="user">
+                </div>
+                <div class="logout">
+                    <img onclick="logoutRequest()" src="./logout.png" alt="logout">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <br>
+        <div class="title">User data</div>
+        <br>
+        <div class="about">
+            Here you can enter information about yourself. 
+            Please fill out all fields.
+            Do not forget to add your photo to your profile description, we are very pleased to see our clients =)
+        </div>
+        <br>
+        <div class="userinfo">
+            <img src="./user_photo.png" alt="user">
+            <div class="userdata">
+                <div>Name</div>
+                <input id="name"></input>
+                <div>Surname</div>
+                <input id="surname"></input>
+                <div>Age</div>
+                <input id="age"></input>
+                <div>Ocupation</div>
+                <input id="ocupation"></input>
+            </div>
+            <div class="actionstab">
+                <button id="save">Save</button>
+            </div>
+        </div>
+        <br>
+    </div>
+
+    <div class="container">
+        <br>
+        <div class="title">Tariff plan</div>
+        <div class="about">
+            Here you can choose your personal tariff plan for the provision of services.
+            Please note that we offer both monthly payment plans and services with one-time payments.
+        </div>
+        <br>
+        <div class="tariff">
+            <div id="onetime">
+                <img src="./onetime.png" alt="onetime">
+                <p>One time payment</p>
+            </div>
+            <div id="monthly">
+                <img src="./monthly.png" alt="monthly">
+                <p>Monthly plan</p>
+            </div>
+        </div>
+        <br>
+    </div>
+
+    <div class="container">
+        <br>
+        <div class="title">User contacts</div>
+        <br>
+        <div class="about">
+            Please provide your contact details. 
+            If we made a web site for you, then indicate its address. 
+            Please do not hesitate to tell as much about yourself as possible, 
+            provide a link to your profile on Instagram, Facebook or other social network.
+        </div>
+        <br>
+        <div class="userinfo">
+            <img src="./contacts.png" alt="onetime">
+            <div class="userdata">
+                <div>Phone</div>
+                <input id="phone"></input>
+                <div>E-mail</div>
+                <input id="email"></input>
+                <div>Website link</div>
+                <input id="site"></input>
+                <div>Social network link</div>
+                <input id="social"></input>
+            </div>
+            <div class="actionstab">
+                <button id="save">Save</button>
+            </div>
+        </div>
+        <br>
+    </div>
+
+    <footer>
+        <div class="copyright">
+            All rights reserved Andranik Sarkisyan 2021
+        </div>
+    </footer>
+
+    <script src="./main_screen.js"></script>
+</body>
+</html>
