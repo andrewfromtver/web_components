@@ -158,7 +158,81 @@ home = () => {
 activities = () => {
     window.location = '/web_components/main_screen/#activities'
     document.title = 'Activities'
-    document.querySelector('.content').innerHTML = ``
+    document.querySelector('.content').innerHTML = `
+        <div class="container">
+            <br>
+            <div class="title">Activities on your projects</div>
+            <br>
+            <div class="about">
+                Here you can track the progress of all the projects we make for you.
+                You can also leave an estimate for each sprint if your project is being carried out in several stages.
+            </div>
+            <br>
+            <div class="userinfo">
+                <img src="./activities.png" alt="activities">
+                <div class="userdata">
+                    <div>Total projects</div>
+                    <input id="projects" disabled></input>
+                    <div>Total dev. time</div>
+                    <input id="devtime" disabled></input>
+                    <div>Total deployments</div>
+                    <input id="deployments" disabled></input>
+                    <div>Total passed tests</div>
+                    <input id="tests" disabled></input>
+                </div>
+            </div>
+            <br>
+        </div>
+        <div class="container">
+            <br>
+            <div class="title">Total activities chart</div>
+            <br>
+            <canvas id="myChart"></canvas>
+            <br>
+        </div>
+    `
+    let total = JSON.parse(sessionStorage.userData).total
+
+    document.querySelector('#projects').value  = total[0]
+    document.querySelector('#devtime').value  = total[1]
+    document.querySelector('#deployments').value  = total[2]
+    document.querySelector('#tests').value  = total[3]
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Bugs', 'CR', 'Tascks', 'Tests'],
+            datasets: [{
+                label: 'Total items',
+                data: JSON.parse(sessionStorage.userData).activities,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ]
+            }]
+        },
+        options: {
+            legend: {
+                display: false
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
 }
 
 // contacts block
