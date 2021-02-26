@@ -109,11 +109,7 @@ body {
 .userinfo > img {
     height: 272px;
     width: 250px;
-    margin: 0 20px 5px 0;
-}
-
-.userdata {
-    padding: 0 20px 0 0;
+    margin: 0 0 5px 0;
 }
 
 .actionstab {
