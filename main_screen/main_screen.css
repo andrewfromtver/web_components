@@ -142,7 +142,7 @@ input:focus {
 }
 
 button {
-    margin: 5px 0;
+    margin: 25px 0 5px 0;
     height: 35px;
     cursor: pointer;
     color: #ffffff;
