@@ -224,6 +224,14 @@ activities = () => {
             legend: {
                 display: false
             },
+            layout: {
+                padding: {
+                    left: 20,
+                    right: 40,
+                    top: 0,
+                    bottom: 0
+                }
+            },
             scales: {
                 yAxes: [{
                     ticks: {
