@@ -5,7 +5,7 @@ window.onload = () => {
         window.location = '/web_components/main_screen'
     }
     document.title = 'Login'
-    usernames = ['andrewfromtver']
+    usernames = ['demo']
 }
 
 
@@ -29,7 +29,9 @@ loginRequest = () => {
                 'phone': '+7 900 111 22 33',
                 'email': 'email@company.com',
                 'site': 'https://demo.com',
-                'social': 'https://link.to_social_network'
+                'social': 'https://link_to_social.network',
+                'activities': [12, 19, 3, 5],
+                'total': [4, '12 hours', 3, '125 unit & 23 manual']
             }
             sessionStorage.setItem('userData', JSON.stringify(userData))
             document.querySelector('.container').remove()
