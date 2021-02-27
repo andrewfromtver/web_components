@@ -344,6 +344,10 @@ contacts = (changeUrl = true) => {
             <div class="reports">
                 <button id="save">
                     <img src="./download.png" width="24" height="14">
+                    Services
+                </button>
+                <button id="save">
+                    <img src="./download.png" width="24" height="14">
                     Prices
                 </button>
                 <button id="save">
