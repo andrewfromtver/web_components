@@ -5,14 +5,38 @@ window.onload = () => {
     if (sessionStorage.userData) {
         userData = JSON.parse(sessionStorage.userData)
         userInfo()
+
+        smartSwitch = () => {
+            if (window.location.hash === '#user_info') { userInfo(false) }
+            if (window.location.hash === '#home') { home(false) }
+            if (window.location.hash === '#activities') { activities(false) }
+            if (window.location.hash === '#contacts') { contacts(false) }
+        }
+
+        window.addEventListener('popstate', smartSwitch);
+
     }
     else {
         window.location = '/web_components/login_form'
     }
 }
 // user info block
-userInfo = () => {
-    window.location = '/web_components/main_screen/#user_info'
+function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader()
+      reader.onload = function(e) {
+        document.querySelector('#user_photo').src = e.target.result
+        userData.photo = e.target.result
+        sessionStorage.setItem('userData', JSON.stringify(userData))
+      }
+      reader.readAsDataURL(input.files[0])
+    }
+}
+
+userInfo = (changeUrl = true) => {
+    if (changeUrl) {
+        window.location = '/web_components/main_screen/#user_info'
+    }
     document.title = 'User information'
     document.querySelector('.content').innerHTML = `
     <div class="container">
@@ -26,7 +50,10 @@ userInfo = () => {
         </div>
         <br>
         <div class="userinfo">
-            <img src="./user_photo.png" alt="user">
+            <div>
+                <img id="user_photo" src=${ userData.photo || './user_photo.png'} alt="user">
+                <input type="file" id="photo" accept=".jpg, .jpeg, .png" onchange="readURL(this)">
+            </div>
             <div class="userdata">
                 <div>Name</div>
                 <input id="name"></input>
@@ -149,14 +176,20 @@ logoutRequest = () => {
     sessionStorage.removeItem('userData')
 }
 
-home = () => {
-    window.location = '/web_components/main_screen/#home'
+home = (changeUrl = true) => {
+    if (changeUrl) {
+        window.location = '/web_components/main_screen/#home'
+    }
+    
     document.title = 'Home'
     document.querySelector('.content').innerHTML = ``
 }
 
-activities = () => {
-    window.location = '/web_components/main_screen/#activities'
+activities = (changeUrl = true) => {
+    if (changeUrl) {
+        window.location = '/web_components/main_screen/#activities'
+    }
+    
     document.title = 'Activities'
     document.querySelector('.content').innerHTML = `
         <div class="container">
@@ -187,7 +220,24 @@ activities = () => {
             <br>
             <div class="title">Total activities chart</div>
             <br>
-            <canvas id="myChart"></canvas>
+            <div class="canvas">
+                <canvas id="myChart"></canvas>
+            </div>
+            <br>
+            <div class="reports">
+                <button id="save">
+                    <img src="./download.png" width="24" height="14">
+                    Daily report
+                </button>
+                <button id="save">
+                    <img src="./download.png" width="24" height="14">
+                    Weekly report
+                </button>
+                <button id="save">
+                    <img src="./download.png" width="24" height="14">
+                    Monthly report
+                </button>
+            </div>
             <br>
         </div>
     `
@@ -228,8 +278,8 @@ activities = () => {
                 padding: {
                     left: 20,
                     right: 40,
-                    top: 0,
-                    bottom: 0
+                    top: 30,
+                    bottom: 10
                 }
             },
             scales: {
@@ -244,8 +294,11 @@ activities = () => {
 }
 
 // contacts block
-contacts = () => {
-    window.location = '/web_components/main_screen/#contacts'
+contacts = (changeUrl = true) => {
+    if (changeUrl) {
+        window.location = '/web_components/main_screen/#contacts'
+    }
+    
     document.title = 'Contacts'
     document.querySelector('.content').innerHTML = `
         <div class="container">
@@ -277,14 +330,16 @@ contacts = () => {
             <br>
             <div class="title">Our headquarters</div>
             <br>
-            <iframe 
-                id="map" 
-                width="100%" 
-                height="400px" 
-                frameborder="0" 
-                scrolling="no" 
-                src="https://www.openstreetmap.org/export/embed.html?bbox=35.834464,56.83654,35.864464,56.86654&amp;layer=mapquest&amp;marker=56.85154,35.849464"
-            ></iframe>
+            <div>
+                <iframe 
+                    id="map" 
+                    width="96%" 
+                    height="400px" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=35.834464,56.83654,35.864464,56.86654&amp;layer=mapquest&amp;marker=56.85154,35.849464"
+                ></iframe>
+            </div>
             <br>
         </div>
     `

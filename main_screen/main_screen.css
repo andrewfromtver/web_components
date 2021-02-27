@@ -26,8 +26,8 @@ body {
 
 .navbar {
     height: 45px;
-    background-color: #333333;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #333333;
     box-shadow: 2px 2px 15px #333333;
     display: flex;
     flex-direction: row;
@@ -37,40 +37,48 @@ body {
 .navlinks {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
     max-width: 900px;
 }
 
 .navlink {
+    background-color: #ffffff;
     cursor: pointer;
     width: 30%;
     text-align: center;
-    margin: 10px;
-    border: 1px solid #666666;
-    box-shadow: 2px 2px 15px #444444;
+    margin: 8px 10px 8px 0;
+    border-bottom: 2px solid #0589ed;
+    border-radius: 0px;
+    box-shadow: 2px 2px 15px #ffffff;
+    opacity: 0.75;
 }
 
 .navlink:hover {
-    box-shadow: 2px 2px 15px #666666;
+    opacity: 1;
 }
 
 .navlink:active {
     box-shadow: none;
     border: none;
-    margin: 11px;
+    margin: 10px 10px 10px 0;
     color: #666666;
 }
 
 .logout, .user {
-    padding: 10px;
+    padding: 10px 0 10px 10px;
+    opacity: 0.85;
+}
+
+.logout:hover, .user:hover {
+    opacity: 1;
 }
 
 .logout > img, .user > img {
     height: 25px;
     width: 25px;
-    border-radius: 25%;
-    box-shadow: 2px 2px 15px #666666;
+    border-radius: 4px;
+    box-shadow: 2px 2px 15px #ffffff;
     cursor: pointer;
     background-color: #ffffff;
 }
@@ -106,9 +114,18 @@ body {
     flex-wrap: wrap;
 }
 
+.userinfo > div {
+    display: flex;
+    flex-direction: column;
+}
+
 .userinfo > img {
     height: 272px;
-    margin: 0 0 5px 0;
+}
+
+.userinfo > div > img {
+    height: 231px;
+    width: 250px;
 }
 
 .actionstab {
@@ -198,11 +215,24 @@ button:hover {
 
 .copyright {
     width: 100%;
-    background-color: #333333;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #333333;
     height: 20px;
     text-align: center;
-    opacity: 0.75;
+    opacity: 0.95;
     font-size: 10px;
     padding: 5px 0 0 0;
+}
+
+iframe, .canvas {
+    margin: 0 2%;
+    box-shadow: 0 5px 25px #aaaaaa;
+}
+
+.reports {
+    padding: 0 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
