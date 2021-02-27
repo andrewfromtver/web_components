@@ -21,7 +21,7 @@ loginRequest = () => {
         document.querySelector('.container').classList.add('animate__animated', 'animate__bounceOutLeft');
         setTimeout(() => {
             let userData = {
-                'photo': 'https://vjoy.cc/wp-content/uploads/2019/06/1-12.jpg',
+                'photo': null,
                 'name': 'Jhon',
                 'surname': 'Doe',
                 'age': 33,
