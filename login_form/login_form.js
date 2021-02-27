@@ -8,7 +8,6 @@ window.onload = () => {
     usernames = ['demo']
 }
 
-
 loginRequest = () => {
     event.preventDefault()
 
@@ -49,7 +48,6 @@ loginRequest = () => {
         }
     }
 }
-
 requestNewAcc = () => {
     event.preventDefault()
 
@@ -109,7 +107,6 @@ requestNewAcc = () => {
     requestContainer.appendChild(requestForm)
     document.body.appendChild(requestContainer)
 }
-
 createNewAcc = () => {
     event.preventDefault()
 
@@ -143,7 +140,6 @@ createNewAcc = () => {
         }
     }
 }
-
 info = () => {
     if (document.querySelector('.info__form')) {
         document.querySelector('.login__form').style.display = 'block'
