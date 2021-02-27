@@ -25,7 +25,9 @@ home = (changeUrl = true) => {
     }
     
     document.title = 'Home'
-    document.querySelector('.content').innerHTML = ``
+    document.querySelector('.content').innerHTML = `
+    
+    `
 }
 
 // activities tab
