@@ -341,6 +341,17 @@ contacts = (changeUrl = true) => {
                 ></iframe>
             </div>
             <br>
+            <div class="reports">
+                <button id="save">
+                    <img src="./download.png" width="24" height="14">
+                    Prices
+                </button>
+                <button id="save">
+                    <img src="./download.png" width="24" height="14">
+                    Portfolio
+                </button>
+            </div>
+            <br>
         </div>
     `
 
