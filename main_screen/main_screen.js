@@ -26,8 +26,63 @@ home = (changeUrl = true) => {
     
     document.title = 'Home'
     document.querySelector('.content').innerHTML = `
-    
+        <div class="container">
+            <br>
+            <div class="title">Subjects list</div>
+            <br>
+            <div class="about">
+            Here are collected all the bugs, tascks and change requests that appear in the development of your projects. 
+            You can view them all and leave comments on them with wishes.
+            </div>
+            <br>
+            <div class="serchbar">
+                <div>
+                    <form>
+                        <input type="text" id="search" placeholder="Quick search">
+                    </form> 
+                </div>
+                 <select>
+                    <option value="all">All</option>
+                    <option value="highest">Highest</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                    <option value="lowest">Lowest</option>
+                </select> 
+                <select>
+                    <option value="all">All</option>
+                    <option value="bug">Bugs</option>
+                    <option value="task">Tascks</option>
+                    <option value="cr">Change requests</option>
+                </select>   
+            </div>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Priority</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody class="subjects">
+                    </tbody>
+                </table>
+            </div>
+            <br>
+        </div>
     `
+    let subjects = ''
+    userData.subjects.forEach(e => {
+        subjects += `
+        <tr class="table-row">
+            <td>${e.description}</th>
+            <td>${e.priority}</th>
+            <td>${e.type}</th>
+        <tr>
+        `
+    })
+    document.querySelector('.subjects').innerHTML = subjects
 }
 
 // activities tab
@@ -98,7 +153,7 @@ activities = (changeUrl = true) => {
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Bugs', 'CR', 'Tascks', 'Tests'],
+            labels: ['Bugs', 'CRs', 'Tascks', 'Tests'],
             datasets: [{
                 label: 'Total items',
                 data: JSON.parse(sessionStorage.userData).activities,
@@ -218,7 +273,6 @@ readURL = (input) => {
       reader.onload = function(e) {
         document.querySelector('#user_photo').src = e.target.result
         userData.photo = e.target.result
-        sessionStorage.setItem('userData', JSON.stringify(userData))
       }
       reader.readAsDataURL(input.files[0])
     }

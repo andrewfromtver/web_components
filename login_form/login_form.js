@@ -31,7 +31,94 @@ loginRequest = () => {
                 'site': 'https://demo.com',
                 'social': 'https://link_to_social.network',
                 'activities': [12, 19, 3, 5],
-                'total': [4, '12 hours', 3, '125 unit & 23 manual']
+                'total': [4, '12 hours', 3, '125 unit & 23 manual'],
+                'subjects': [
+                    {
+                        'description': 'Bug 1',
+                        'priority': 'highest',
+                        'type': 'medium'
+                    },
+                    {
+                        'description': 'Bug 2',
+                        'priority': 'highest',
+                        'type': 'medium'
+                    },
+                    {
+                        'description': 'Bug 3',
+                        'priority': 'highest',
+                        'type': 'medium'
+                    },
+                    {
+                        'description': 'Bug 4',
+                        'priority': 'highest',
+                        'type': 'medium'
+                    },
+                    {
+                        'description': 'Bug 5',
+                        'priority': 'highest',
+                        'type': 'medium'
+                    },
+                    {
+                        'description': 'Bug 2',
+                        'priority': 'highest',
+                        'type': 'medium'
+                    },
+                    {
+                        'description': 'Bug 3',
+                        'priority': 'highest',
+                        'type': 'medium'
+                    },
+                    {
+                        'description': 'Bug 4',
+                        'priority': 'highest',
+                        'type': 'medium'
+                    },
+                    {
+                        'description': 'Bug 5',
+                        'priority': 'highest',
+                        'type': 'medium'
+                    },
+                    {
+                        'description': 'Bug 2',
+                        'priority': 'highest',
+                        'type': 'medium'
+                    },
+                    {
+                        'description': 'Bug 3',
+                        'priority': 'highest',
+                        'type': 'medium'
+                    },
+                    {
+                        'description': 'Bug 4',
+                        'priority': 'highest',
+                        'type': 'medium'
+                    },
+                    {
+                        'description': 'Bug 5',
+                        'priority': 'highest',
+                        'type': 'medium'
+                    },
+                    {
+                        'description': 'Bug 2',
+                        'priority': 'highest',
+                        'type': 'medium'
+                    },
+                    {
+                        'description': 'Bug 3',
+                        'priority': 'highest',
+                        'type': 'medium'
+                    },
+                    {
+                        'description': 'Bug 4',
+                        'priority': 'highest',
+                        'type': 'medium'
+                    },
+                    {
+                        'description': 'Bug 5',
+                        'priority': 'highest',
+                        'type': 'medium'
+                    }
+                ]
             }
             sessionStorage.setItem('userData', JSON.stringify(userData))
             document.querySelector('.container').remove()

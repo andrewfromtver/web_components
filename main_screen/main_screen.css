@@ -134,14 +134,14 @@ body {
     justify-content: flex-end;
 }
 
-input, button {
+input, button, select {
     border: none;
     outline: none;
     border-radius: 0px;
     width: 250px;
 }
 
-input {
+input, select {
     height: 35px;
     margin: 5px 0;
     border-bottom: 2px solid #aaaaaa;
@@ -149,11 +149,11 @@ input {
     padding: 0 5px;
 }
 
-input:active, input:focus, input:hover {
+input:active, input:focus, input:hover, select:active, select:focus, select:hover {
     box-shadow: 0 5px 25px #aaaaaa;
 }
 
-input:focus {
+input:focus, select:focus {
     border-bottom: 2px solid #0589ed;
 }
 
@@ -235,4 +235,45 @@ iframe, .canvas {
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+.serchbar {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.serchbar > div {
+    display: flex;
+    flex-direction: row;
+}
+
+.table > table {
+    margin: 0 auto;
+    width: 96%;
+    box-shadow: 0 5px 25px #aaaaaa;
+}
+table {
+    background-color: #eeeeee;
+}
+thead > tr > th {
+    text-align: start;
+    padding: 10px;
+    box-shadow: 0 1px 0 #0589ed;
+}
+tbody > tr > td {
+    text-align: start;
+    padding: 5px 10px;
+    background-color: #ffffff;
+}
+.table-row:hover {
+    box-shadow: 0 1px 0 #0589ed;
+    cursor: pointer;
+}
+.table-row:active {
+    box-shadow: 0 1px 15px #0589ed;
+    cursor: pointer;
+    opacity: 0.5;
 }
