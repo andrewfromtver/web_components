@@ -18,21 +18,21 @@ loginRequest = () => {
 
     if (usernames.includes(username.value) && password.value) {
         document.querySelector('.container').classList.add('animate__animated', 'animate__bounceOutLeft');
-            let userData
-            fetch('https://spreadsheets.google.com/feeds/cells/1TVPaJbgPBHSpcan18Z5QERA6PNPj9UBxc6PoO-n436g/1/public/full?alt=json')
-            .then(function(value){
-                if(value.status !== 200){
-                    return Promise.reject(new Error('Ошибка'));
-                }
-                    return value.json();
-            })
-            .then(function(output){
-                userData = JSON.parse(output.feed.entry[0].gs$cell.$t)
-            })
-            sessionStorage.setItem('userData', JSON.stringify(userData))
-            document.querySelector('.container').remove()
-            document.querySelector('.help').remove()
-            window.location = '/web_components/main_screen/#user_info'
+        let userData
+        fetch('https://spreadsheets.google.com/feeds/cells/1TVPaJbgPBHSpcan18Z5QERA6PNPj9UBxc6PoO-n436g/1/public/full?alt=json')
+        .then(function(value){
+            if(value.status !== 200){
+                return Promise.reject(new Error('Ошибка'));
+            }
+                return value.json();
+        })
+        .then(function(output){
+            userData = JSON.parse(output.feed.entry[0].gs$cell.$t)
+        })
+        sessionStorage.setItem('userData', JSON.stringify(userData))
+        document.querySelector('.container').remove()
+        document.querySelector('.help').remove()
+        window.location = '/web_components/main_screen/#user_info'
     }
     else {
         if (!usernames.value || !usernames.includes(username.value)) {
