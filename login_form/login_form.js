@@ -19,53 +19,17 @@ loginRequest = () => {
     if (usernames.includes(username.value) && password.value) {
         document.querySelector('.container').classList.add('animate__animated', 'animate__bounceOutLeft');
         setTimeout(() => {
-            let userData = {
-                'id': 1,
-                'photo': null,
-                'name': 'Jhon',
-                'surname': 'Doe',
-                'age': 33,
-                'ocupation': 'Project manager',
-                'subscribed': true,
-                'phone': '+7 900 111 22 33',
-                'email': 'email@company.com',
-                'site': 'https://demo.com',
-                'social': 'https://link_to_social.network',
-                'activities': [12, 19, 3, 5],
-                'total': [4, '12 hours', 3, '125 unit & 23 manual'],
-                'subjects': [
-                    {
-                        'id': 1,
-                        'description': '1',
-                        'priority': 'highest',
-                        'type': 'cr'
-                    },
-                    {
-                        'id': 2,
-                        'description': '2',
-                        'priority': 'medium',
-                        'type': 'task'
-                    },
-                    {
-                        'id': 3,
-                        'description': '3',
-                        'priority': 'low',
-                        'type': 'bug'
-                    },
-                    {
-                        'id': 4,
-                        'description': '4',
-                        'priority': 'lowest',
-                        'type': 'task'
-                    },
-                    {
-                        'id': 5,
-                        'description': '5',
-                        'priority': 'high',
-                        'type': 'cr'
-                    }
-                ]
-            }
+            let userData
+            fetch('https://spreadsheets.google.com/feeds/cells/1TVPaJbgPBHSpcan18Z5QERA6PNPj9UBxc6PoO-n436g/1/public/full?alt=json')
+            .then(function(value){
+                if(value.status !== 200){
+                    return Promise.reject(new Error('Ошибка'));
+                }
+                    return value.json();
+            })
+            .then(function(output){
+                userData = JSON.parse(output.feed.entry[0].gs$cell.$t)
+            })
             sessionStorage.setItem('userData', JSON.stringify(userData))
             document.querySelector('.container').remove()
             document.querySelector('.help').remove()
