@@ -38,10 +38,10 @@ home = (changeUrl = true) => {
             <div class="serchbar">
                 <div>
                     <form>
-                        <input type="text" id="search" placeholder="Quick search">
+                        <input type="text" id="search" placeholder="Quick search" oninput="filterSubjects()">
                     </form> 
                 </div>
-                 <select class="priority">
+                 <select class="priority" onchange="filterSubjects()">
                     <option value="all">All</option>
                     <option value="highest">Highest</option>
                     <option value="high">High</option>
@@ -77,53 +77,12 @@ home = (changeUrl = true) => {
 
 filterSubjects = () => {
     let subjects = ''
-    if (document.querySelector('.type').value === 'all') {
+    let type = document.querySelector('.type').value
+    let priority = document.querySelector('.priority').value
+    if (type !== 'all' && priority !== 'all') {
         subjects = ''
         userData.subjects.forEach(e => {
-            subjects += `
-            <tr class="table-row">
-                <td>${e.description}</th>
-                <td>${e.priority}</th>
-                <td>${e.type}</th>
-            <tr>
-            `
-        })
-        document.querySelector('.subjects').innerHTML = subjects
-    }
-    else if (document.querySelector('.type').value === 'bug') {
-        subjects = ''
-        userData.subjects.forEach(e => {
-            if (e.type === 'bug') {
-                subjects += `
-                <tr class="table-row">
-                    <td>${e.description}</th>
-                    <td>${e.priority}</th>
-                    <td>${e.type}</th>
-                <tr>
-                `
-            }
-        })
-        document.querySelector('.subjects').innerHTML = subjects
-    }
-    else if (document.querySelector('.type').value === 'task') {
-        subjects = ''
-        userData.subjects.forEach(e => {
-            if (e.type === 'task') {
-                subjects += `
-                <tr class="table-row">
-                    <td>${e.description}</th>
-                    <td>${e.priority}</th>
-                    <td>${e.type}</th>
-                <tr>
-                `
-            }
-        })
-        document.querySelector('.subjects').innerHTML = subjects
-    }
-    else if (document.querySelector('.type').value === 'cr') {
-        subjects = ''
-        userData.subjects.forEach(e => {
-            if (e.type === 'cr') {
+            if ( type === e.type && priority === e.priority) {
                 subjects += `
                 <tr class="table-row">
                     <td>${e.description}</th>
