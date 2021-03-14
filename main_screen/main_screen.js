@@ -95,10 +95,10 @@ filterSubjects = () => {
         })
         document.querySelector('.subjects').innerHTML = subjects
     }
-    else if (type === 'all' && priority !== 'all' && e.description.includes(query)) {
+    else if (type === 'all' && priority !== 'all') {
         subjects = ''
         userData.subjects.forEach(e => {
-            if (priority === e.priority) {
+            if (priority === e.priority && e.description.includes(query)) {
                 subjects += `
                 <tr class="table-row">
                     <td>${e.description}</th>
@@ -110,10 +110,10 @@ filterSubjects = () => {
         })
         document.querySelector('.subjects').innerHTML = subjects
     }
-    else if (type !== 'all' && priority === 'all' && e.description.includes(query)) {
+    else if (type !== 'all' && priority === 'all') {
         subjects = ''
         userData.subjects.forEach(e => {
-            if (type === e.type) {
+            if (type === e.type && e.description.includes(query)) {
                 subjects += `
                 <tr class="table-row">
                     <td>${e.description}</th>
@@ -125,16 +125,18 @@ filterSubjects = () => {
         })
         document.querySelector('.subjects').innerHTML = subjects
     }
-    else if (e.description.includes(query)) {
+    else {
         subjects = ''
         userData.subjects.forEach(e => {
-            subjects += `
-                <tr class="table-row">
-                    <td>${e.description}</th>
-                    <td>${e.priority}</th>
-                    <td>${e.type}</th>
-                <tr>
-            `
+            if (e.description.includes(query)) {
+                subjects += `
+                    <tr class="table-row">
+                        <td>${e.description}</th>
+                        <td>${e.priority}</th>
+                        <td>${e.type}</th>
+                    <tr>
+                `
+            }
         })
         document.querySelector('.subjects').innerHTML = subjects
     }
