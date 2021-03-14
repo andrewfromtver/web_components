@@ -22,7 +22,9 @@ loginRequest = () => {
         fetch('https://spreadsheets.google.com/feeds/cells/1TVPaJbgPBHSpcan18Z5QERA6PNPj9UBxc6PoO-n436g/1/public/full?alt=json')
         .then(function(value){
             if(value.status !== 200){
-                return Promise.reject(new Error('Ошибка'));
+                password.style.backgroundColor = '#f7cdd2'
+                username.style.backgroundColor = '#f7cdd2'
+                return Promise.reject(new Error('Ошибка'))
             }
                 return value.json();
         })
