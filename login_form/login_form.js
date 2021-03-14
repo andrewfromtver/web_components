@@ -37,7 +37,7 @@ loginRequest = () => {
                         'id': 1,
                         'description': '1',
                         'priority': 'highest',
-                        'type': 'bug'
+                        'type': 'cr'
                     },
                     {
                         'id': 2,
@@ -61,7 +61,7 @@ loginRequest = () => {
                         'id': 5,
                         'description': '5',
                         'priority': 'high',
-                        'type': 'task'
+                        'type': 'cr'
                     }
                 ]
             }
