@@ -36,11 +36,6 @@ home = (changeUrl = true) => {
             </div>
             <br>
             <div class="serchbar">
-                <div>
-                    <form>
-                        <input type="text" id="search" placeholder="Quick search" oninput="filterSubjects()">
-                    </form> 
-                </div>
                  <select class="priority" onchange="filterSubjects()">
                     <option value="all">All</option>
                     <option value="highest">Highest</option>
@@ -54,7 +49,12 @@ home = (changeUrl = true) => {
                     <option value="bug">Bugs</option>
                     <option value="task">Tascks</option>
                     <option value="cr">Change requests</option>
-                </select>   
+                </select>
+                <div>
+                    <form>
+                        <input type="text" id="search" placeholder="Quick search" oninput="filterSubjects()">
+                    </form> 
+                </div>
             </div>
             <div class="table">
                 <table>
