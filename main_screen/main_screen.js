@@ -94,6 +94,36 @@ filterSubjects = () => {
         })
         document.querySelector('.subjects').innerHTML = subjects
     }
+    else if (type === 'all' && priority !== 'all') {
+        subjects = ''
+        userData.subjects.forEach(e => {
+            if (priority === e.priority) {
+                subjects += `
+                <tr class="table-row">
+                    <td>${e.description}</th>
+                    <td>${e.priority}</th>
+                    <td>${e.type}</th>
+                <tr>
+                `
+            }
+        })
+        document.querySelector('.subjects').innerHTML = subjects
+    }
+    else if (type !== 'all' && priority === 'all') {
+        subjects = ''
+        userData.subjects.forEach(e => {
+            if (type === e.type) {
+                subjects += `
+                <tr class="table-row">
+                    <td>${e.description}</th>
+                    <td>${e.priority}</th>
+                    <td>${e.type}</th>
+                <tr>
+                `
+            }
+        })
+        document.querySelector('.subjects').innerHTML = subjects
+    }
 }
 
 // activities tab
