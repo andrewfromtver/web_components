@@ -28,11 +28,11 @@ loginRequest = () => {
         })
         .then(function(output){
             userData = JSON.parse(output.feed.entry[0].gs$cell.$t)
+            sessionStorage.setItem('userData', JSON.stringify(userData))
+            document.querySelector('.container').remove()
+            document.querySelector('.help').remove()
+            window.location = '/web_components/main_screen/#user_info'
         })
-        sessionStorage.setItem('userData', JSON.stringify(userData))
-        document.querySelector('.container').remove()
-        document.querySelector('.help').remove()
-        window.location = '/web_components/main_screen/#user_info'
     }
     else {
         if (!usernames.value || !usernames.includes(username.value)) {
