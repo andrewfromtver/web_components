@@ -93,39 +93,45 @@ filterSubjects = () => {
     else if (document.querySelector('.type').value === 'bug') {
         subjects = ''
         userData.subjects.forEach(e => {
-            subjects += `
-            <tr class="table-row">
-                <td>${e.description}</th>
-                <td>${e.priority}</th>
-                <td>${e.type}</th>
-            <tr>
-            `
+            if (e.type === 'bug') {
+                subjects += `
+                <tr class="table-row">
+                    <td>${e.description}</th>
+                    <td>${e.priority}</th>
+                    <td>${e.type}</th>
+                <tr>
+                `
+            }
         })
         document.querySelector('.subjects').innerHTML = subjects
     }
     else if (document.querySelector('.type').value === 'task') {
         subjects = ''
         userData.subjects.forEach(e => {
-            subjects += `
-            <tr class="table-row">
-                <td>${e.description}</th>
-                <td>${e.priority}</th>
-                <td>${e.type}</th>
-            <tr>
-            `
+            if (e.type === 'task') {
+                subjects += `
+                <tr class="table-row">
+                    <td>${e.description}</th>
+                    <td>${e.priority}</th>
+                    <td>${e.type}</th>
+                <tr>
+                `
+            }
         })
         document.querySelector('.subjects').innerHTML = subjects
     }
     else if (document.querySelector('.type').value === 'cr') {
         subjects = ''
         userData.subjects.forEach(e => {
-            subjects += `
-            <tr class="table-row">
-                <td>${e.description}</th>
-                <td>${e.priority}</th>
-                <td>${e.type}</th>
-            <tr>
-            `
+            if (e.type === 'cr') {
+                subjects += `
+                <tr class="table-row">
+                    <td>${e.description}</th>
+                    <td>${e.priority}</th>
+                    <td>${e.type}</th>
+                <tr>
+                `
+            }
         })
         document.querySelector('.subjects').innerHTML = subjects
     }
