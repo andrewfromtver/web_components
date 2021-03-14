@@ -21,7 +21,7 @@ window.onload = () => {
 // home tab
 home = (changeUrl = true) => {
     if (changeUrl) {
-        window.location = '/web_components/main_screen/#home'
+        window.location = '/web_components/main_screen/#home&priority=all&type=all'
     }
     
     document.title = 'Home'
