@@ -196,6 +196,7 @@ filterSubjects = () => {
         })
         document.querySelector('.subjects').innerHTML = subjects
     }
+    window.location = `/web_components/main_screen/#home&priority=${priority}&type=${type}`
 }
 
 // activities tab
