@@ -35,31 +35,31 @@ loginRequest = () => {
                 'subjects': [
                     {
                         'id': 1,
-                        'description': 'Bug 1',
+                        'description': '1',
                         'priority': 'highest',
                         'type': 'bug'
                     },
                     {
                         'id': 2,
-                        'description': 'Bug 2',
+                        'description': '2',
                         'priority': 'medium',
                         'type': 'task'
                     },
                     {
                         'id': 3,
-                        'description': 'Bug 3',
+                        'description': '3',
                         'priority': 'low',
                         'type': 'bug'
                     },
                     {
                         'id': 4,
-                        'description': 'Bug 4',
+                        'description': '4',
                         'priority': 'lowest',
                         'type': 'task'
                     },
                     {
                         'id': 5,
-                        'description': 'Bug 5',
+                        'description': '5',
                         'priority': 'high',
                         'type': 'task'
                     }
