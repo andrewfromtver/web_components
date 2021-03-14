@@ -11,6 +11,7 @@ window.onload = () => {
                 home()
                 document.querySelector('.type').value = window.location.hash.split('=')[2]
                 document.querySelector('.priority').value = window.location.hash.split('=')[1].split('&')[0]
+                filterSubjects()
             }
             if (window.location.hash === '#activities') { activities(false) }
             if (window.location.hash === '#contacts') { contacts(false) }
