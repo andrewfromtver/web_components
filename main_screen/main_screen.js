@@ -41,7 +41,7 @@ home = (changeUrl = true) => {
                         <input type="text" id="search" placeholder="Quick search">
                     </form> 
                 </div>
-                 <select>
+                 <select class="priority">
                     <option value="all">All</option>
                     <option value="highest">Highest</option>
                     <option value="high">High</option>
@@ -49,7 +49,7 @@ home = (changeUrl = true) => {
                     <option value="low">Low</option>
                     <option value="lowest">Lowest</option>
                 </select> 
-                <select>
+                <select class="type" onchange="filterSubjects()">
                     <option value="all">All</option>
                     <option value="bug">Bugs</option>
                     <option value="task">Tascks</option>
@@ -72,17 +72,63 @@ home = (changeUrl = true) => {
             <br>
         </div>
     `
+    filterSubjects()
+}
+
+filterSubjects = () => {
     let subjects = ''
-    userData.subjects.forEach(e => {
-        subjects += `
-        <tr class="table-row">
-            <td>${e.description}</th>
-            <td>${e.priority}</th>
-            <td>${e.type}</th>
-        <tr>
-        `
-    })
-    document.querySelector('.subjects').innerHTML = subjects
+    if (document.querySelector('.type').value === 'all') {
+        subjects = ''
+        userData.subjects.forEach(e => {
+            subjects += `
+            <tr class="table-row">
+                <td>${e.description}</th>
+                <td>${e.priority}</th>
+                <td>${e.type}</th>
+            <tr>
+            `
+        })
+        document.querySelector('.subjects').innerHTML = subjects
+    }
+    else if (document.querySelector('.type').value === 'bug') {
+        subjects = ''
+        userData.subjects.forEach(e => {
+            subjects += `
+            <tr class="table-row">
+                <td>${e.description}</th>
+                <td>${e.priority}</th>
+                <td>${e.type}</th>
+            <tr>
+            `
+        })
+        document.querySelector('.subjects').innerHTML = subjects
+    }
+    else if (document.querySelector('.type').value === 'task') {
+        subjects = ''
+        userData.subjects.forEach(e => {
+            subjects += `
+            <tr class="table-row">
+                <td>${e.description}</th>
+                <td>${e.priority}</th>
+                <td>${e.type}</th>
+            <tr>
+            `
+        })
+        document.querySelector('.subjects').innerHTML = subjects
+    }
+    else if (document.querySelector('.type').value === 'cr') {
+        subjects = ''
+        userData.subjects.forEach(e => {
+            subjects += `
+            <tr class="table-row">
+                <td>${e.description}</th>
+                <td>${e.priority}</th>
+                <td>${e.type}</th>
+            <tr>
+            `
+        })
+        document.querySelector('.subjects').innerHTML = subjects
+    }
 }
 
 // activities tab
