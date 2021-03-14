@@ -22,7 +22,6 @@ window.onload = () => {
         window.location = '/web_components/login_form'
     }
 }
-
 // home tab
 home = () => {    
     document.title = 'Home'
@@ -195,7 +194,6 @@ filterSubjects = () => {
     }
     window.location = `/web_components/main_screen/#home&priority=${priority}&type=${type}`
 }
-
 // activities tab
 activities = (changeUrl = true) => {
     if (changeUrl) {
@@ -304,7 +302,6 @@ activities = (changeUrl = true) => {
         }
     });
 }
-
 // contacts tab
 contacts = (changeUrl = true) => {
     if (changeUrl) {
@@ -376,7 +373,6 @@ contacts = (changeUrl = true) => {
     document.querySelector('#site').value  = 'https://andrewsarkisyan.com'
     document.querySelector('#social').value  = 'https://vk.com/id_69_tver'
 }
-
 // user info icon
 readURL = (input) => {
     if (input.files && input.files[0]) {
@@ -524,7 +520,6 @@ userInfo = (changeUrl = true) => {
     document.querySelector('#site').value  = userData.site
     document.querySelector('#social').value  = userData.social
 }
-
 // logout icon
 logoutRequest = () => {
     window.location = '/web_components/login_form'
