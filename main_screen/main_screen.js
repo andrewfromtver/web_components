@@ -77,12 +77,13 @@ home = (changeUrl = true) => {
 
 filterSubjects = () => {
     let subjects = ''
+    let query = document.querySelector('#search').value
     let type = document.querySelector('.type').value
     let priority = document.querySelector('.priority').value
     if (type !== 'all' && priority !== 'all') {
         subjects = ''
         userData.subjects.forEach(e => {
-            if ( type === e.type && priority === e.priority) {
+            if ( type === e.type && priority === e.priority && e.description.qqq(query)) {
                 subjects += `
                 <tr class="table-row">
                     <td>${e.description}</th>
@@ -94,7 +95,7 @@ filterSubjects = () => {
         })
         document.querySelector('.subjects').innerHTML = subjects
     }
-    else if (type === 'all' && priority !== 'all') {
+    else if (type === 'all' && priority !== 'all' && e.description.includes(query)) {
         subjects = ''
         userData.subjects.forEach(e => {
             if (priority === e.priority) {
@@ -109,7 +110,7 @@ filterSubjects = () => {
         })
         document.querySelector('.subjects').innerHTML = subjects
     }
-    else if (type !== 'all' && priority === 'all') {
+    else if (type !== 'all' && priority === 'all' && e.description.includes(query)) {
         subjects = ''
         userData.subjects.forEach(e => {
             if (type === e.type) {
@@ -124,7 +125,7 @@ filterSubjects = () => {
         })
         document.querySelector('.subjects').innerHTML = subjects
     }
-    else {
+    else if (e.description.includes(query)) {
         subjects = ''
         userData.subjects.forEach(e => {
             subjects += `
