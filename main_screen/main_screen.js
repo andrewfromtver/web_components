@@ -7,7 +7,10 @@ window.onload = () => {
         home()
         smartSwitch = () => {
             if (window.location.hash === '#user_info') { userInfo(false) }
-            if (window.location.hash === '#home') { home(false) }
+            if (window.location.hash.split('=') === '#home&priority') { 
+                home(false)
+                document.querySelector('.type').value = window.location.hash.split('=')[2]
+            }
             if (window.location.hash === '#activities') { activities(false) }
             if (window.location.hash === '#contacts') { contacts(false) }
         }
@@ -17,7 +20,8 @@ window.onload = () => {
         window.location = '/web_components/login_form'
     }
 }
-
+window.location.hash === '#home&priority=all&type=all') { 
+                home(false)
 // home tab
 home = (changeUrl = true) => {
     if (changeUrl) {
