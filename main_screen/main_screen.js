@@ -22,14 +22,6 @@ window.onload = () => {
         window.location = '/web_components/login_form'
     }
 }
-window.addEventListener('popstate', listener());
-listener = () => {
-    if (window.location.hash.split('=') === '#home&priority') { 
-        document.querySelector('.type').value = window.location.hash.split('=')[2]
-        document.querySelector('.priority').value = window.location.hash.split('=')[1].split('&')[0]
-        filterSubjects()
-    }
-}
 
 // home tab
 home = () => {    
