@@ -139,7 +139,7 @@ filterSubjects = () => {
     if (type !== 'all' && priority !== 'all') {
         subjects = ''
         userData.subjects.forEach(e => {
-            if ( type === e.type && priority === e.priority && e.description.qqq(query)) {
+            if ( type === e.type && priority === e.priority && e.description.includes(query)) {
                 subjects += `
                 <tr class="table-row">
                     <td>${e.description}</th>
