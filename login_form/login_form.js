@@ -20,6 +20,7 @@ loginRequest = () => {
         document.querySelector('.container').classList.add('animate__animated', 'animate__bounceOutLeft');
         setTimeout(() => {
             let userData = {
+                'id': 1,
                 'photo': null,
                 'name': 'Jhon',
                 'surname': 'Doe',
