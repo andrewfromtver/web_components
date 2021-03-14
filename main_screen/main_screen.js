@@ -20,8 +20,7 @@ window.onload = () => {
         window.location = '/web_components/login_form'
     }
 }
-window.location.hash === '#home&priority=all&type=all') { 
-                home(false)
+
 // home tab
 home = (changeUrl = true) => {
     if (changeUrl) {
