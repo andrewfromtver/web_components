@@ -22,7 +22,7 @@ window.onload = () => {
         window.location = '/web_components/login_form'
     }
 }
-window.addEventListener('popstate', listener);
+window.addEventListener('popstate', listener());
 listener = () => {
     if (window.location.hash.split('=') === '#home&priority') { 
         document.querySelector('.type').value = window.location.hash.split('=')[2]
