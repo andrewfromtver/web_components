@@ -8,8 +8,9 @@ window.onload = () => {
         smartSwitch = () => {
             if (window.location.hash === '#user_info') { userInfo(false) }
             if (window.location.hash.split('=') === '#home&priority') { 
-                home(false)
+                home()
                 document.querySelector('.type').value = window.location.hash.split('=')[2]
+                document.querySelector('.priority').value = window.location.hash.split('=')[1].split('&')[0]
             }
             if (window.location.hash === '#activities') { activities(false) }
             if (window.location.hash === '#contacts') { contacts(false) }
@@ -22,11 +23,7 @@ window.onload = () => {
 }
 
 // home tab
-home = (changeUrl = true) => {
-    if (changeUrl) {
-        window.location = '/web_components/main_screen/#home&priority=all&type=all'
-    }
-    
+home = () => {    
     document.title = 'Home'
     document.querySelector('.content').innerHTML = `
         <div class="container">
