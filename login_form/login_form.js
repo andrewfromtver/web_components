@@ -18,7 +18,6 @@ loginRequest = () => {
 
     if (usernames.includes(username.value) && password.value) {
         document.querySelector('.container').classList.add('animate__animated', 'animate__bounceOutLeft');
-        setTimeout(() => {
             let userData
             fetch('https://spreadsheets.google.com/feeds/cells/1TVPaJbgPBHSpcan18Z5QERA6PNPj9UBxc6PoO-n436g/1/public/full?alt=json')
             .then(function(value){
@@ -34,7 +33,6 @@ loginRequest = () => {
             document.querySelector('.container').remove()
             document.querySelector('.help').remove()
             window.location = '/web_components/main_screen/#user_info'
-        }, 450)
     }
     else {
         if (!usernames.value || !usernames.includes(username.value)) {
