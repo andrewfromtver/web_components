@@ -124,6 +124,19 @@ filterSubjects = () => {
         })
         document.querySelector('.subjects').innerHTML = subjects
     }
+    else {
+        subjects = ''
+        userData.subjects.forEach(e => {
+            subjects += `
+                <tr class="table-row">
+                    <td>${e.description}</th>
+                    <td>${e.priority}</th>
+                    <td>${e.type}</th>
+                <tr>
+            `
+        })
+        document.querySelector('.subjects').innerHTML = subjects
+    }
 }
 
 // activities tab
