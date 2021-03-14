@@ -192,7 +192,12 @@ filterSubjects = () => {
         })
         document.querySelector('.subjects').innerHTML = subjects
     }
-    window.location = `/web_components/main_screen/#home&priority=${priority}&type=${type}&query=${query}`
+    if (query) {
+        window.location = `/web_components/main_screen/#home&priority=${priority}&type=${type}&query=${query}`
+    }
+    else {
+        window.location = `/web_components/main_screen/#home&priority=${priority}&type=${type}`
+    }
 }
 // activities tab
 activities = (changeUrl = true) => {
