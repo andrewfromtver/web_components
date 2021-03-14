@@ -147,6 +147,8 @@ input, select {
     border-bottom: 2px solid #aaaaaa;
     background-color: #eeeeee;
     padding: 0 5px;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 input:active, input:focus, input:hover, select:active, select:focus, select:hover {
