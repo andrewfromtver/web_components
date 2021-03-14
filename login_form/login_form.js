@@ -34,89 +34,34 @@ loginRequest = () => {
                 'total': [4, '12 hours', 3, '125 unit & 23 manual'],
                 'subjects': [
                     {
+                        'id': 1,
                         'description': 'Bug 1',
                         'priority': 'highest',
-                        'type': 'medium'
+                        'type': 'bug'
                     },
                     {
+                        'id': 2,
                         'description': 'Bug 2',
-                        'priority': 'highest',
-                        'type': 'medium'
+                        'priority': 'medium',
+                        'type': 'task'
                     },
                     {
+                        'id': 3,
                         'description': 'Bug 3',
-                        'priority': 'highest',
-                        'type': 'medium'
+                        'priority': 'low',
+                        'type': 'bug'
                     },
                     {
+                        'id': 4,
                         'description': 'Bug 4',
-                        'priority': 'highest',
-                        'type': 'medium'
+                        'priority': 'lowest',
+                        'type': 'task'
                     },
                     {
+                        'id': 5,
                         'description': 'Bug 5',
-                        'priority': 'highest',
-                        'type': 'medium'
-                    },
-                    {
-                        'description': 'Bug 2',
-                        'priority': 'highest',
-                        'type': 'medium'
-                    },
-                    {
-                        'description': 'Bug 3',
-                        'priority': 'highest',
-                        'type': 'medium'
-                    },
-                    {
-                        'description': 'Bug 4',
-                        'priority': 'highest',
-                        'type': 'medium'
-                    },
-                    {
-                        'description': 'Bug 5',
-                        'priority': 'highest',
-                        'type': 'medium'
-                    },
-                    {
-                        'description': 'Bug 2',
-                        'priority': 'highest',
-                        'type': 'medium'
-                    },
-                    {
-                        'description': 'Bug 3',
-                        'priority': 'highest',
-                        'type': 'medium'
-                    },
-                    {
-                        'description': 'Bug 4',
-                        'priority': 'highest',
-                        'type': 'medium'
-                    },
-                    {
-                        'description': 'Bug 5',
-                        'priority': 'highest',
-                        'type': 'medium'
-                    },
-                    {
-                        'description': 'Bug 2',
-                        'priority': 'highest',
-                        'type': 'medium'
-                    },
-                    {
-                        'description': 'Bug 3',
-                        'priority': 'highest',
-                        'type': 'medium'
-                    },
-                    {
-                        'description': 'Bug 4',
-                        'priority': 'highest',
-                        'type': 'medium'
-                    },
-                    {
-                        'description': 'Bug 5',
-                        'priority': 'highest',
-                        'type': 'medium'
+                        'priority': 'high',
+                        'type': 'task'
                     }
                 ]
             }
