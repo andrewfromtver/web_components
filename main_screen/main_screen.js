@@ -127,7 +127,6 @@ home = () => {
         }
     });
 }
-
 filterSubjects = () => {
     let subjects = ''
     let query = document.querySelector('#search').value
