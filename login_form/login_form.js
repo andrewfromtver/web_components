@@ -24,7 +24,8 @@ window.onload = () => {
                         return value.json();
                 })
                 .then(function(output){
-                    let jsonData = JSON.parse(output.feed.entry[0].gs$cell.$t)
+                    let jsonData = []
+                    output.feed.entry.forEach(e => {jsonData.push(e.gs$cell.$t)})
                     jsonData.forEach(e =>{
                         if (e.passwd === password.value && e.username === username.value) {
                             document.querySelector('.container').className = 'container login__form animate__animated animate__bounceOutLeft'
