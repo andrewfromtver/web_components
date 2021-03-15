@@ -93,6 +93,7 @@ input {
     display:block;
     border:none;
     border-bottom:1px solid #757575;
+    border-radius: 0px;
 }
 input:focus { 
     outline:none; 

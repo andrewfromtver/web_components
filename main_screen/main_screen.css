@@ -253,6 +253,7 @@ input, select {
     box-shadow: 0 5px 25px #aaaaaa;
     height: 37px;
     border: none;
+    border-radius: 0px;
 }
 .select {
     margin-bottom:20px;
