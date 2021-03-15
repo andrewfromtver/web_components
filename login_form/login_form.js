@@ -44,7 +44,10 @@ window.onload = () => {
                                 document.querySelector('.container').remove()
                                 document.querySelector('.help').remove()
                                 window.location = '/web_components/main_screen/#user_info'
-                            } 
+                            }
+                            else {
+                                password.style.backgroundColor = '#f7cdd2'
+                            }
                         })
                     })
                 }
