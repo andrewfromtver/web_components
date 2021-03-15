@@ -84,7 +84,7 @@ form {
 /* Material input */
 .group { 
     position:relative; 
-    margin-bottom:10px;
+    margin-bottom:15px;
     width: 250px;
 }
 input {
@@ -94,6 +94,7 @@ input {
     display:block;
     border:none;
     border-bottom:1px solid #757575;
+    border-radius: 0px;
 }
 input:focus { 
     outline:none; 
