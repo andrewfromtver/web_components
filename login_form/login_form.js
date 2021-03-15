@@ -51,14 +51,6 @@ window.onload = () => {
                         })
                     })
                 }
-                else {
-                    if (!usernames.value || !usernames.includes(username.value)) {
-                        username.style.backgroundColor = '#f7cdd2'
-                    }
-                    if (!password.value) {
-                        password.style.backgroundColor = '#f7cdd2'
-                    }
-                }
             }
             requestNewAcc = () => {
                 event.preventDefault()
