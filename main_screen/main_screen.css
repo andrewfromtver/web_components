@@ -92,7 +92,6 @@ body {
     box-shadow: 2px 2px 15px #333333;
     animation: fadeIn;
     animation-duration: 1s;
-    opacity: 0.95;
 }
 
 .title {
@@ -121,6 +120,7 @@ body {
 
 .userinfo > img {
     height: 272px;
+    margin-bottom: 35px;
 }
 
 .userinfo > div > img {
@@ -138,6 +138,11 @@ body {
     background-color: #0589ed;
     margin-bottom: 40px;
 }
+
+#photo {
+    margin-bottom: 40px;
+}
+
 #save:active {
     background-color: #ffffff;
     color: #0589ed;
@@ -192,7 +197,7 @@ body {
 
 iframe, .canvas {
     margin: 0 2%;
-    box-shadow: 0 5px 25px #aaaaaa;
+    box-shadow: 0 5px 35px #aaaaaa;
 }
 
 .reports {
@@ -219,7 +224,7 @@ iframe, .canvas {
 .table > table {
     margin: 0 auto;
     width: 96%;
-    box-shadow: 0 5px 25px #aaaaaa;
+    box-shadow: 0 5px 35px #aaaaaa;
 }
 table {
     background-color: #eeeeee;
@@ -250,7 +255,7 @@ input, select {
     -webkit-appearance: none;
     outline: none;
     width: 250px;
-    box-shadow: 0 5px 25px #aaaaaa;
+    box-shadow: 0 5px 35px #aaaaaa;
     height: 37px;
     border: none;
     border-radius: 0px;
@@ -269,7 +274,7 @@ input, select {
 .select .select-text {
 	appearance: none;
 	-webkit-appearance:none;
-  color: gray;
+    color: gray;
 }
 .select:after {
 	position: absolute;
@@ -297,9 +302,9 @@ input, select {
     transition: 0.2s ease all;
 }
 .select-text:focus ~ .select-label, .select-text:valid ~ .select-label {
-    top: -8px;
+    top: -10px;
     transition: 0.2s ease all;
-    font-size: 14px;
+    font-size: 12px;
 }
 .select-text:valid:not(focus) ~ .select-label {
     background: #0589ed;
@@ -328,7 +333,7 @@ label {
     position:absolute;
     pointer-events:none;
     left:10px;
-    top:10px;
+    top:7px;
     transition:0.2s ease all; 
     -moz-transition:0.2s ease all; 
     -webkit-transition:0.2s ease all;
@@ -399,7 +404,7 @@ button {
     border-width: 0;
     outline: none;
     border-radius: 2px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    box-shadow: 0 5px 35px #aaaaaa;
     color: #ecf0f1;
     transition: background-color .3s;
 }

@@ -228,28 +228,24 @@ window.onload = () => {
                                 <div class="userinfo">
                                     <img src="./activities.png" alt="activities">
                                     <div class="userdata">
-                                        
                                         <div class="group">      
                                             <input required id="projects">
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
                                             <label>Total projects</label>
                                         </div> 
-                                        
                                         <div class="group">      
                                             <input required id="devtime">
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
                                             <label>Total dev. time</label>
                                         </div>
-                                        
                                         <div class="group">      
                                             <input required id="deployments">
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
                                             <label>Total deployments</label>
                                         </div>
-                                        
                                         <div class="group">      
                                             <input required id="tests">
                                             <span class="highlight"></span>
@@ -282,16 +278,13 @@ window.onload = () => {
                                         Monthly report
                                     </button>
                                 </div>
-                                <br>
                             </div>
                         `
                         let total = JSON.parse(sessionStorage.userData).total
-
                         document.querySelector('#projects').value  = total[0]
                         document.querySelector('#devtime').value  = total[1]
                         document.querySelector('#deployments').value  = total[2]
                         document.querySelector('#tests').value  = total[3]
-
                         var ctx = document.getElementById('myChart').getContext('2d');
                         var myChart = new Chart(ctx, {
                             type: 'bar',
@@ -354,7 +347,6 @@ window.onload = () => {
                                     If you want to get a consultation outside working hours, please use our monthly subscription.
                                 </div>
                                 <br>
-                                <br>
                                 <div class="userinfo">
                                     <img src="./contacts.png" alt="onetime">
                                     <div class="userdata">
@@ -415,10 +407,8 @@ window.onload = () => {
                                         Portfolio
                                     </button>
                                 </div>
-                                <br>
                             </div>
                         `
-
                         document.querySelector('#phone').value  = '+7 900 012 44 17'
                         document.querySelector('#email').value  = 'andrewsarkisyan@gmail.com'
                         document.querySelector('#site').value  = 'https://andrewsarkisyan.com'
@@ -492,21 +482,18 @@ window.onload = () => {
                                         <span class="bar"></span>
                                         <label>Name</label>
                                     </div>
-                                    
                                     <div class="group">      
                                         <input required id="surname">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>Surname</label>
                                     </div>
-                                    
                                     <div class="group">      
                                         <input required id="age">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>Age</label>
                                     </div>
-                                    
                                     <div class="group">      
                                         <input required id="ocupation">
                                         <span class="highlight"></span>
@@ -518,9 +505,7 @@ window.onload = () => {
                                     <button onclick="saveUserData()" id="save">Save</button>
                                 </div>
                             </div>
-                            <br>
                         </div>
-
                         <div class="container">
                             <br>
                             <div class="title">Tariff plan</div>
@@ -541,7 +526,6 @@ window.onload = () => {
                             </div>
                             <br>
                         </div>
-
                         <div class="container">
                             <br>
                             <div class="title">User contacts</div>
@@ -552,7 +536,6 @@ window.onload = () => {
                                 Please do not hesitate to tell as much about yourself as possible, 
                                 provide a link to your profile on Instagram, Facebook or other social network.
                             </div>
-                            <br>
                             <br>
                             <div class="userinfo">
                                 <img src="./contacts.png" alt="onetime">
@@ -586,22 +569,18 @@ window.onload = () => {
                                     <button onclick="saveUserContacts()" id="save">Save</button>
                                 </div>
                             </div>
-                            <br>
                         </div>
                         `
-
                         document.querySelector('#name').value  = userData.name
                         document.querySelector('#surname').value  = userData.surname
                         document.querySelector('#age').value  = userData.age
                         document.querySelector('#ocupation').value  = userData.ocupation
-
                         if (userData.subscribed) {
                             document.querySelector('#monthly').style.boxShadow = '0 5px 25px #0589ed'
                         }
                         else {
                             document.querySelector('#onetime').style.boxShadow = '0 5px 25px #0589ed'
                         }
-
                         document.querySelector('#phone').value  = userData.phone
                         document.querySelector('#email').value  = userData.email
                         document.querySelector('#site').value  = userData.site
