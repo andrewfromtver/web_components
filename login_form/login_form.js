@@ -48,7 +48,6 @@ window.onload = () => {
                                 password.style.backgroundColor = '#f7cdd2'
                             }
                         })
-                    })
                 }
             }
             requestNewAcc = () => {
