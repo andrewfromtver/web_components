@@ -12,7 +12,7 @@ window.onload = () => {
         const password = document.querySelector('#password')
         password.oninput = function() { this.style.backgroundColor = '' }
     
-        if (usernames.includes(username.value) && password.value) {
+        if (username.value && password.value) {
             let userData = []
             fetch('https://spreadsheets.google.com/feeds/cells/1TVPaJbgPBHSpcan18Z5QERA6PNPj9UBxc6PoO-n436g/1/public/full?alt=json')
                 .then(function(value){
@@ -35,13 +35,14 @@ window.onload = () => {
                             }, 450)
                         }
                         else {
+                            username.style.backgroundColor = '#f7cdd2'
                             password.style.backgroundColor = '#f7cdd2'
                         }
                     })
                 })
         }
         else {
-            if (!usernames.value || !usernames.includes(username.value)) {
+            if (!username.value) {
                 username.style.backgroundColor = '#f7cdd2'
             }
             if (!password.value) {
