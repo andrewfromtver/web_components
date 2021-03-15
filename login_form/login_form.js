@@ -39,7 +39,7 @@ window.onload = () => {
                         jsonData.forEach(e =>{
                             if (e.id === password.value) {
                                 document.querySelector('.container').classList.add('animate__animated', 'animate__bounceOutLeft')
-                                setTimeout(()=>{
+                                setTimeout(() => {
                                     userData.push(e)
                                     sessionStorage.setItem('userData', JSON.stringify(userData[0]))
                                     window.location = '/web_components/main_screen/#user_info'
