@@ -134,45 +134,9 @@ body {
     justify-content: flex-end;
 }
 
-input, button, select {
-    border: none;
-    outline: none;
-    border-radius: 0px;
-    width: 250px;
-}
-
-input, select {
-    height: 35px;
-    margin: 5px 0;
-    border-bottom: 2px solid #aaaaaa;
-    background-color: #eeeeee;
-    padding: 0 5px;
-    appearance: none;
-    -webkit-appearance: none;
-}
-
-input:active, input:focus, input:hover, select:active, select:focus, select:hover {
-    box-shadow: 0 5px 25px #aaaaaa;
-}
-
-input:focus, select:focus {
-    border-bottom: 2px solid #0589ed;
-}
-
-button {
-    margin: 25px 0 6px 0;
-    height: 35px;
-    cursor: pointer;
-    color: #ffffff;
-    font-size: 15px;
-}
-
-button:hover {
-    box-shadow: 0 5px 25px #aaaaaa;
-}
-
 #save {
     background-color: #0589ed;
+    margin-bottom: 40px;
 }
 #save:active {
     background-color: #ffffff;
@@ -278,4 +242,196 @@ tbody > tr > td {
     box-shadow: 0 1px 15px #0589ed;
     cursor: pointer;
     opacity: 0.5;
+}
+
+/* Material select */
+input, select {
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    width: 250px;
+    box-shadow: 0 5px 25px #aaaaaa;
+    height: 37px;
+    border: none;
+}
+.select {
+    margin-bottom:20px;
+    position: relative;
+}  
+.select-text {
+    position: relative;
+    background-color: transparent;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #666666;
+}
+.select .select-text {
+	appearance: none;
+	-webkit-appearance:none;
+  color: gray;
+}
+.select:after {
+	position: absolute;
+	top: 18px;
+	right: 10px;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid rgba(0, 0, 0, 0.12);
+	pointer-events: none;
+}
+.select-label {
+    color: #eeeeee;
+    background: white;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    padding: 0 5px;
+    left: 10px;
+    top: 12px;
+    transition: 0.2s ease all;
+}
+.select-text:focus ~ .select-label, .select-text:valid ~ .select-label {
+    top: -8px;
+    transition: 0.2s ease all;
+    font-size: 14px;
+}
+.select-text:valid:not(focus) ~ .select-label {
+    background: #0589ed;
+}
+/* Material input */
+.group { 
+    position:relative; 
+    margin-bottom:40px;
+    width: 250px;
+}
+input {
+    font-size:14px;
+    padding:10px;
+    width: 250px;
+    display:block;
+    border:none;
+    border-bottom:1px solid #757575;
+}
+input:focus { 
+    outline:none; 
+}
+label {
+    color:#999;
+    font-size:14px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:10px;
+    top:10px;
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+}
+input:focus ~ label, input:valid ~ label {
+    top:-20px;
+    font-size:12px;
+    color:#0589ed;
+}
+.bar { 
+    position:relative; display:block; width:300px; 
+}
+.bar:before, .bar:after {
+    content:'';
+    height:2px; 
+    width:0;
+    bottom:1px; 
+    position:absolute;
+    background:#0589ed; 
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+}
+.bar:before {
+    left:33.5%;
+}
+.bar:after {
+    right:50%; 
+}
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width:50%;
+}
+.highlight {
+    position:absolute;
+    height:60%; 
+    width:100px; 
+    top:25%; 
+    left:0;
+    pointer-events:none;
+    opacity:0.5;
+}
+input:focus ~ .highlight {
+    -webkit-animation:inputHighlighter 0.3s ease;
+    -moz-animation:inputHighlighter 0.3s ease;
+    animation:inputHighlighter 0.3s ease;
+}
+@-webkit-keyframes inputHighlighter {
+	from { background:#0589ed; }
+    to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#0589ed; }
+    to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#0589ed; }
+    to 	{ width:0; background:transparent; }
+}
+/* Material button */
+button {
+    width: 250px;
+    height: 37px;
+    position: relative;
+    display: block;
+    margin: 7px auto;
+    padding: 0;
+    overflow: hidden;
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    color: #ecf0f1;
+    transition: background-color .3s;
+}
+button > * {
+    position: relative;
+}  
+button span {
+    display: block;
+}
+button:before {
+    content: "";   
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0;
+    padding-top: 0;
+    border-radius: 100%;
+    background-color: rgba(236, 240, 241, .3);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}  
+button:active:before {
+    width: 120%;
+    padding-top: 120%;    
+    transition: width .2s ease-out, padding-top .2s ease-out;
+}
+#login, #create {
+    background-color: #0589ed;
+}
+#request, #cancel {
+    background-color: #7a98af;
 }

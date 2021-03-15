@@ -36,24 +36,33 @@ window.onload = () => {
                                 </div>
                                 <br>
                                 <div class="serchbar">
-                                    <select class="priority" onchange="filterSubjects()">
-                                        <option value="all">All</option>
-                                        <option value="highest">Highest</option>
-                                        <option value="high">High</option>
-                                        <option value="medium">Medium</option>
-                                        <option value="low">Low</option>
-                                        <option value="lowest">Lowest</option>
-                                    </select> 
-                                    <select class="type" onchange="filterSubjects()">
-                                        <option value="all">All</option>
-                                        <option value="bug">Bugs</option>
-                                        <option value="task">Tascks</option>
-                                        <option value="cr">Change requests</option>
-                                    </select>
+                                    <div class="select" onchange="filterSubjects()">
+                                        <select class="select-text priority" required>
+                                            <option value="all">All</option>
+                                            <option value="highest">Highest</option>
+                                            <option value="high">High</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="low">Low</option>
+                                            <option value="lowest">Lowest</option>
+                                        </select>
+                                        <label class="select-label">Priority</label>
+                                    </div>
+                                    <div class="select" onchange="filterSubjects()">
+                                        <select class="select-text type" required>
+                                            <option value="all">All</option>
+                                            <option value="bug">Bugs</option>
+                                            <option value="task">Tascks</option>
+                                            <option value="cr">Change requests</option>
+                                        </select>
+                                        <label class="select-label">Type</label>
+                                    </div>
                                     <div>
-                                        <form>
-                                            <input type="text" id="search" placeholder="Quick search" oninput="filterSubjects()">
-                                        </form> 
+                                        <div class="group">      
+                                            <input required type="text" id="search" oninput="filterSubjects()">
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>Quick search</label>
+                                        </div> 
                                     </div>
                                 </div>
                                 <div class="table">
@@ -219,14 +228,34 @@ window.onload = () => {
                                 <div class="userinfo">
                                     <img src="./activities.png" alt="activities">
                                     <div class="userdata">
-                                        <div>Total projects</div>
-                                        <input id="projects" disabled></input>
-                                        <div>Total dev. time</div>
-                                        <input id="devtime" disabled></input>
-                                        <div>Total deployments</div>
-                                        <input id="deployments" disabled></input>
-                                        <div>Total passed tests</div>
-                                        <input id="tests" disabled></input>
+                                        
+                                        <div class="group">      
+                                            <input required id="projects">
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>Total projects</label>
+                                        </div> 
+                                        
+                                        <div class="group">      
+                                            <input required id="devtime">
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>Total dev. time</label>
+                                        </div>
+                                        
+                                        <div class="group">      
+                                            <input required id="deployments">
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>Total deployments</label>
+                                        </div>
+                                        
+                                        <div class="group">      
+                                            <input required id="tests">
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>Total passed tests</label>
+                                        </div>
                                     </div>
                                 </div>
                                 <br>
@@ -325,17 +354,34 @@ window.onload = () => {
                                     If you want to get a consultation outside working hours, please use our monthly subscription.
                                 </div>
                                 <br>
+                                <br>
                                 <div class="userinfo">
                                     <img src="./contacts.png" alt="onetime">
                                     <div class="userdata">
-                                        <div>Phone</div>
-                                        <input id="phone" disabled></input>
-                                        <div>E-mail</div>
-                                        <input id="email" disabled></input>
-                                        <div>Website link</div>
-                                        <input id="site" disabled></input>
-                                        <div>Social network link</div>
-                                        <input id="social" disabled></input>
+                                        <div class="group">      
+                                            <input required id="phone">
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>Phone</label>
+                                        </div>
+                                        <div class="group">      
+                                            <input required id="email">
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>E-mail</label>
+                                        </div>
+                                        <div class="group">      
+                                            <input required id="site">
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>Website link</label>
+                                        </div>
+                                        <div class="group">      
+                                            <input required id="social">
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label>Social network link</label>
+                                        </div>
                                     </div>
                                 </div>
                                 <br>
@@ -440,14 +486,33 @@ window.onload = () => {
                                     <input type="file" id="photo" accept=".jpg, .jpeg, .png" onchange="readURL(this)">
                                 </div>
                                 <div class="userdata">
-                                    <div>Name</div>
-                                    <input id="name"></input>
-                                    <div>Surname</div>
-                                    <input id="surname"></input>
-                                    <div>Age</div>
-                                    <input id="age"></input>
-                                    <div>Ocupation</div>
-                                    <input id="ocupation"></input>
+                                    <div class="group">      
+                                        <input required id="name">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Name</label>
+                                    </div>
+                                    
+                                    <div class="group">      
+                                        <input required id="surname">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Surname</label>
+                                    </div>
+                                    
+                                    <div class="group">      
+                                        <input required id="age">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Age</label>
+                                    </div>
+                                    
+                                    <div class="group">      
+                                        <input required id="ocupation">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Ocupation</label>
+                                    </div>
                                 </div>
                                 <div class="actionstab">
                                     <button onclick="saveUserData()" id="save">Save</button>
@@ -488,17 +553,34 @@ window.onload = () => {
                                 provide a link to your profile on Instagram, Facebook or other social network.
                             </div>
                             <br>
+                            <br>
                             <div class="userinfo">
                                 <img src="./contacts.png" alt="onetime">
                                 <div class="userdata">
-                                    <div>Phone</div>
-                                    <input id="phone"></input>
-                                    <div>E-mail</div>
-                                    <input id="email"></input>
-                                    <div>Website link</div>
-                                    <input id="site"></input>
-                                    <div>Social network link</div>
-                                    <input id="social"></input>
+                                    <div class="group">      
+                                        <input required id="phone">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Phone</label>
+                                    </div>
+                                    <div class="group">      
+                                        <input required id="email">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>E-mail</label>
+                                    </div>
+                                    <div class="group">      
+                                        <input required id="site">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Website link</label>
+                                    </div>
+                                    <div class="group">      
+                                        <input required id="social">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Social network link</label>
+                                    </div>
                                 </div>
                                 <div class="actionstab">
                                     <button onclick="saveUserContacts()" id="save">Save</button>

@@ -53,62 +53,60 @@ window.onload = () => {
     }
     requestNewAcc = () => {
                 event.preventDefault()
-            
+                let inner = `
+                    <div class="container request__form">
+                        <div class="title">New account</div>
+                        <form>
+                            <br>
+                            <div class="group">      
+                                <input required type="text" id="newUsername">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Username</label>
+                            </div>
+                            <div class="group">      
+                                <input required type="password" id="newPassword">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Password</label>
+                            </div>
+                            <div class="group">      
+                                <input required type="password" id="newPassword2">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Repeat password</label>
+                            </div>
+                            <br>
+                            <button id="create">
+                                <span>Create</span></button>
+                            </button>
+                        </form>
+                        <form>
+                            <button id="cancel">
+                                <span>Cancel</span></button>
+                            </button>
+                        </form>
+                    </div>
+                `
+                document.querySelector('body').innerHTML += inner
                 document.querySelector('.login__form').style.display = 'none';
                 document.querySelector('.help').style.display = 'none'
-            
-                const br = document.createElement('br')
-                const br2 = document.createElement('br')
-                const requestContainer = document.createElement('div')
-                requestContainer.className = 'container request__form'
-                const title = document.createElement('div')
-                title.className = 'title'
-                title.innerText = 'New account'
-                const requestForm = document.createElement('form')
-                const username = document.createElement('input')
-                username.placeholder = 'New username'
-                username.id = 'newUsername'
-                username.oninput = function() {
+                document.querySelector('#newUsername').oninput = function() {
                     this.style.backgroundColor = ''
                 }
-                const password = document.createElement('input')
-                password.id = 'newPassword'
-                password.oninput = function() {
+                document.querySelector('#newPassword').oninput = function() {
                     this.style.backgroundColor = ''
                 }
-                password.placeholder = 'New password'
-                password.type = 'password'
-                const password2 = document.createElement('input')
-                password2.id = 'newPassword2'
-                password2.oninput = function() {
+                document.querySelector('#newPassword2').oninput = function() {
                     this.style.backgroundColor = ''
                 }
-                password2.placeholder = 'Repeat password'
-                password2.type = 'password'
-                const createBtn = document.createElement('button')
-                createBtn.onclick = () => { createNewAcc() }
-                createBtn.innerText = 'Create'
-                createBtn.id = 'create'
-                const cancelBtn = document.createElement('button')
-                cancelBtn.onclick = () => {
+                document.querySelector('#create').onclick = () => { createNewAcc() }
+                document.querySelector('#cancel').onclick = () => {
                     event.preventDefault()
-            
                     document.querySelector('.login__form').style.display = 'block'
                     document.querySelector('.help').style.display = 'block'
-                    requestContainer.remove()
+                    document.querySelector('.request__form').remove()
                 }
-                cancelBtn.innerText = 'Cancel'
-                cancelBtn.id = 'cancel'
-                requestContainer.appendChild(title)
-                requestForm.appendChild(br)
-                requestForm.appendChild(username)
-                requestForm.appendChild(password)
-                requestForm.appendChild(password2)
-                requestForm.appendChild(br2)
-                requestForm.appendChild(createBtn)
-                requestForm.appendChild(cancelBtn)
-                requestContainer.appendChild(requestForm)
-                document.body.appendChild(requestContainer)
     }
     createNewAcc = () => {
                 event.preventDefault()
@@ -119,19 +117,15 @@ window.onload = () => {
                 
                 if (newUsername.value
                     && newPassword.value.length > 3
-                    && newPassword.value === newPassword2.value
-                    && !usernames.includes(newUsername.value)) {
-                    usernames.push(newUsername.value)
-            
+                    && newPassword.value === newPassword2.value) {
                     document.querySelector('.request__form').remove()
-                    
                     setTimeout(() => {
                         document.querySelector('.login__form').style.display = 'block'
-                    }, 2500)   
+                        document.querySelector('.help').style.display = 'block'
+                    }, 450)   
                 }
                 else {
-                    if (!newUsername.value
-                        || usernames.includes(newUsername.value)) {
+                    if (!newUsername.value) {
                         newUsername.style.backgroundColor = '#f7cdd2'
                     }
                     if (newPassword.value.length < 4) {

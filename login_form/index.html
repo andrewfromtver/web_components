@@ -14,13 +14,27 @@
         <div class="title">Welcome back!</div>
         <form>
             <br>
-            <input type="text" id="username" placeholder="Username">
-            <input type="password" id="password" placeholder="Password">
+            <div class="group">      
+                <input required type="text" id="username">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Username</label>
+            </div>
+            <div class="group">      
+                <input required type="password" id="password">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Password</label>
+            </div>
             <br>
-            <button id="login" onclick="loginRequest()">Login</button>
+            <button id="login" onclick="loginRequest()">
+                <span>Login</span></button>
+            </button>
         </form>
         <form>
-            <button id="request" onclick="requestNewAcc()">Request new account</button>
+            <button id="request" onclick="requestNewAcc()">
+                <span>Request new account</span></button>
+            </button>
         </form>
     </div>
     <div class="help">
