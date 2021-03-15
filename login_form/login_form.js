@@ -1,66 +1,55 @@
-let usernames = []
-
 window.onload = () => {
     if (sessionStorage.userData) {
         window.location = '/web_components/main_screen'
     }
     document.title = 'Login'
-    fetch('https://spreadsheets.google.com/feeds/cells/1TVPaJbgPBHSpcan18Z5QERA6PNPj9UBxc6PoO-n436g/2/public/full?alt=json')
-        .then(function(value){
-            if(value.status !== 200){
-                return Promise.reject(new Error('Ошибка'))
-            }
-                return value.json();
-        })
-        .then(function(output){
-            let jsonData = JSON.parse(output.feed.entry[0].gs$cell.$t)
-            jsonData.forEach(e => {usernames.push(e.username)})
-            loginRequest = () => {
-                event.preventDefault()
-            
-                const username = document.querySelector('#username')
-                username.oninput = function() { this.style.backgroundColor = '' }
-                const password = document.querySelector('#password')
-                password.oninput = function() { this.style.backgroundColor = '' }
-            
-                if (usernames.includes(username.value) && password.value) {
-                    let userData = []
-                    fetch('https://spreadsheets.google.com/feeds/cells/1TVPaJbgPBHSpcan18Z5QERA6PNPj9UBxc6PoO-n436g/1/public/full?alt=json')
-                    .then(function(value){
-                        if(value.status !== 200){
-                            password.style.backgroundColor = '#f7cdd2'
-                            username.style.backgroundColor = '#f7cdd2'
-                            return Promise.reject(new Error('Ошибка'))
-                        }
-                            return value.json();
-                    })
-                    .then(function(output){
-                        jsonData = JSON.parse(output.feed.entry[0].gs$cell.$t)
-                        jsonData.forEach(e =>{
-                            if (e.id === password.value) {
-                                document.querySelector('.container').className = 'container login__form animate__animated animate__bounceOutLeft'
-                                setTimeout(() => {
-                                    userData.push(e)
-                                    sessionStorage.setItem('userData', JSON.stringify(userData[0]))
-                                    window.location = '/web_components/main_screen/#user_info'
-                                }, 450)
-                            }
-                            else {
-                                password.style.backgroundColor = '#f7cdd2'
-                            }
-                        })
-                    })
-                }
-                else {
-                    if (!usernames.value || !usernames.includes(username.value)) {
-                        username.style.backgroundColor = '#f7cdd2'
-                    }
-                    if (!password.value) {
+
+    loginRequest = () => {
+        event.preventDefault()
+    
+        const username = document.querySelector('#username')
+        username.oninput = function() { this.style.backgroundColor = '' }
+        const password = document.querySelector('#password')
+        password.oninput = function() { this.style.backgroundColor = '' }
+    
+        if (usernames.includes(username.value) && password.value) {
+            let userData = []
+            fetch('https://spreadsheets.google.com/feeds/cells/1TVPaJbgPBHSpcan18Z5QERA6PNPj9UBxc6PoO-n436g/1/public/full?alt=json')
+                .then(function(value){
+                    if(value.status !== 200){
                         password.style.backgroundColor = '#f7cdd2'
+                        username.style.backgroundColor = '#f7cdd2'
+                        return Promise.reject(new Error('Ошибка'))
                     }
-                }
+                        return value.json();
+                })
+                .then(function(output){
+                    jsonData = JSON.parse(output.feed.entry[0].gs$cell.$t)
+                    jsonData.forEach(e =>{
+                        if (e.id === password.value && e.username === username.value) {
+                            document.querySelector('.container').className = 'container login__form animate__animated animate__bounceOutLeft'
+                            setTimeout(() => {
+                                userData.push(e)
+                                sessionStorage.setItem('userData', JSON.stringify(userData[0]))
+                                window.location = '/web_components/main_screen/#user_info'
+                            }, 450)
+                        }
+                        else {
+                            password.style.backgroundColor = '#f7cdd2'
+                        }
+                    })
+                })
+        }
+        else {
+            if (!usernames.value || !usernames.includes(username.value)) {
+                username.style.backgroundColor = '#f7cdd2'
             }
-            requestNewAcc = () => {
+            if (!password.value) {
+                password.style.backgroundColor = '#f7cdd2'
+            }
+        }
+    }
+    requestNewAcc = () => {
                 event.preventDefault()
             
                 document.querySelector('.login__form').style.display = 'none';
@@ -118,8 +107,8 @@ window.onload = () => {
                 requestForm.appendChild(cancelBtn)
                 requestContainer.appendChild(requestForm)
                 document.body.appendChild(requestContainer)
-            }
-            createNewAcc = () => {
+    }
+    createNewAcc = () => {
                 event.preventDefault()
             
                 let newUsername = document.querySelector('#newUsername')
@@ -151,8 +140,8 @@ window.onload = () => {
                         newPassword2.style.backgroundColor = '#f7cdd2'
                     }
                 }
-            }
-            info = () => {
+    }
+    info = () => {
                 if (document.querySelector('.info__form')) {
                     document.querySelector('.login__form').style.display = 'block'
                     document.querySelector('.help').style.display = 'block'
@@ -194,6 +183,5 @@ window.onload = () => {
                     infoContainer.appendChild(infoForm)
                     document.body.appendChild(infoContainer)
                 }
-            }
-        })
+    }
 }
