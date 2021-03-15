@@ -166,7 +166,7 @@ input:focus ~ .highlight {
 }
 /* Material button */
 button {
-    width: 300px;
+    width: 250px;
     height: 37px;
     position: relative;
     display: block;
@@ -176,7 +176,7 @@ button {
     border-width: 0;
     outline: none;
     border-radius: 2px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    box-shadow: 0 5px 35px #aaaaaa;
     color: #ecf0f1;
     transition: background-color .3s;
 }
