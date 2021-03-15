@@ -13,7 +13,8 @@ window.onload = () => {
                 return value.json();
         })
         .then(function(output){
-            usernames = JSON.parse(output.feed.entry[0].gs$cell.$t)
+            let jsonData = JSON.parse(output.feed.entry[0].gs$cell.$t)
+            jsonData.forEach(e => {usernames.push(e.username)})
             loginRequest = () => {
                 event.preventDefault()
             
