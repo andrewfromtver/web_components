@@ -37,7 +37,7 @@ window.onload = () => {
                     })
                     .then(function(output){
                         jsonData = JSON.parse(output.feed.entry[0].gs$cell.$t)
-                        jsonData.forEach(e =>{if(e.id === password) {userData.push(e)} })
+                        jsonData.forEach(e =>{if(e.id === password.value) {userData.push(e)} })
                         sessionStorage.setItem('userData', JSON.stringify(userData[0]))
                         document.querySelector('.container').remove()
                         document.querySelector('.help').remove()
