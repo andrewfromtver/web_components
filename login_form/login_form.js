@@ -39,7 +39,7 @@ window.onload = () => {
                         jsonData = JSON.parse(output.feed.entry[0].gs$cell.$t)
                         jsonData.forEach(e =>{if(e.id === password) {userData.push(e)} })
                         userData = userData[0]
-                        sessionStorage.setItem('userData', userData)
+                        sessionStorage.setItem('userData', JSON.stringify(userData))
                         document.querySelector('.container').remove()
                         document.querySelector('.help').remove()
                         window.location = '/web_components/main_screen/#user_info'
