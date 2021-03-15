@@ -38,7 +38,7 @@ window.onload = () => {
                         jsonData = JSON.parse(output.feed.entry[0].gs$cell.$t)
                         jsonData.forEach(e =>{
                             if (e.id === password.value) {
-                                document.querySelector('.container').classList.add('animate__animated', 'animate__bounceOutLeft')
+                                document.querySelector('.container').className = 'container login__form animate__animated animate__bounceOutLeft'
                                 setTimeout(() => {
                                     userData.push(e)
                                     sessionStorage.setItem('userData', JSON.stringify(userData[0]))
