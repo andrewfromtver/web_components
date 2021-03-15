@@ -35,13 +35,15 @@ window.onload = () => {
                             return value.json();
                     })
                     .then(function(output){
-                        document.querySelector('.container').classList.add('animate__animated', 'animate__bounceOutLeft')
                         jsonData = JSON.parse(output.feed.entry[0].gs$cell.$t)
                         jsonData.forEach(e =>{
                             if (e.id === password.value) {
-                                userData.push(e)
-                                sessionStorage.setItem('userData', JSON.stringify(userData[0]))
-                                window.location = '/web_components/main_screen/#user_info'
+                                document.querySelector('.container').classList.add('animate__animated', 'animate__bounceOutLeft')
+                                setTimeout(()=>{
+                                    userData.push(e)
+                                    sessionStorage.setItem('userData', JSON.stringify(userData[0]))
+                                    window.location = '/web_components/main_screen/#user_info'
+                                }, 450)
                             }
                             else {
                                 password.style.backgroundColor = '#f7cdd2'
