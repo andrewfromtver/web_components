@@ -41,7 +41,6 @@ window.onload = () => {
                             if (e.id === password.value) {
                                 userData.push(e)
                                 sessionStorage.setItem('userData', JSON.stringify(userData[0]))
-                                document.querySelector('.container').remove()
                                 document.querySelector('.help').remove()
                                 window.location = '/web_components/main_screen/#user_info'
                             }
