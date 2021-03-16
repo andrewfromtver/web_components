@@ -232,7 +232,6 @@ table {
 thead > tr > th {
     text-align: start;
     padding: 10px;
-    box-shadow: 0 1px 0 #0589ed;
 }
 tbody > tr > td {
     text-align: start;
@@ -272,6 +271,41 @@ tbody > tr > td {
 
 .up__btn > img:hover, .up__btn > img:focus {
     box-shadow: 0 0 50px #aaaaaa;
+}
+
+#asc, #desc {
+    cursor: pointer;
+}
+
+#asc:hover, #desc:hover {
+    box-shadow: 0 0 15px #0589ed;
+    background-color: #0589ed;
+}
+
+#asc:after {
+    margin: 8px;
+	position: absolute;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid #eeeeee;
+	pointer-events: none;
+}
+
+#desc:after {
+    margin: 8px;
+	position: absolute;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #eeeeee;
+	pointer-events: none;
 }
 
 /* Material select */
@@ -424,6 +458,7 @@ input:focus ~ .highlight {
 }
 /* Material button */
 button {
+    cursor: pointer;
     width: 250px;
     height: 37px;
     position: relative;

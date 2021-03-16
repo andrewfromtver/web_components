@@ -69,9 +69,9 @@ window.onload = () => {
                                     <table>
                                         <thead>
                                             <tr>
-                                                <th>Description</th>
-                                                <th>Priority</th>
-                                                <th>Type</th>
+                                                <th id="asc" class="sort__description" onclick="sortSubjects('description', this.id)">Description</th>
+                                                <th id="asc" class="sort__priority" onclick="sortSubjects('priority', this.id)">Priority</th>
+                                                <th id="asc" class="sort__type" onclick="sortSubjects('type', this.id)">Type</th>
                                             </tr>
                                         </thead>
                                         <tbody class="subjects">
@@ -207,6 +207,84 @@ window.onload = () => {
                         else {
                             window.location = `/web_components/main_screen/#home&priority=${priority}&type=${type}`
                         }
+                    }
+                    sortSubjects = (type, order) => {
+                        if (type === 'type') {
+                            if (order === 'asc') {
+                                document.querySelector('.sort__type').id = 'desc'
+                                subjects = subjects.sort(function (a, b) {
+                                        if (a.type > b.type) {
+                                        return 1
+                                        }
+                                        if (a.type < b.type) {
+                                        return -1
+                                        }
+                                        return 0
+                                    })
+                            } else {
+                                document.querySelector('.sort__type').id = 'asc'
+                                subjects = subjects.sort(function (a, b) {
+                                    if (a.type < b.type) {
+                                      return 1
+                                    }
+                                    if (a.type > b.type) {
+                                      return -1
+                                    }
+                                    return 0
+                                })
+                            }
+                        }
+                        if (type === 'priority') {
+                            if (order === 'asc') {
+                                document.querySelector('.sort__priority').id = 'desc'
+                                subjects = subjects.sort(function (a, b) {
+                                        if (a.priority > b.priority) {
+                                        return 1
+                                        }
+                                        if (a.priority < b.priority) {
+                                        return -1
+                                        }
+                                        return 0
+                                    })
+                            } else {
+                                document.querySelector('.sort__priority').id = 'asc'
+                                subjects = subjects.sort(function (a, b) {
+                                    if (a.priority < b.priority) {
+                                      return 1
+                                    }
+                                    if (a.priority > b.priority) {
+                                      return -1
+                                    }
+                                    return 0
+                                })
+                            }
+                        }
+                        if (type === 'description') {
+                            if (order === 'asc') {
+                                document.querySelector('.sort__description').id = 'desc'
+                                subjects = subjects.sort(function (a, b) {
+                                        if (a.description > b.description) {
+                                        return 1
+                                        }
+                                        if (a.description < b.description) {
+                                        return -1
+                                        }
+                                        return 0
+                                    })
+                            } else {
+                                document.querySelector('.sort__description').id = 'asc'
+                                subjects = subjects.sort(function (a, b) {
+                                    if (a.description < b.description) {
+                                      return 1
+                                    }
+                                    if (a.description > b.description) {
+                                      return -1
+                                    }
+                                    return 0
+                                })
+                            }
+                        }
+                        filterSubjects()
                     }
                     // activities tab
                     activities = (changeUrl = true) => {

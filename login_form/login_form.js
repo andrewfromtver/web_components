@@ -77,7 +77,7 @@ window.onload = () => {
                                 <label>Repeat password</label>
                             </div>
                             <div class="group">      
-                                <input required type="email" id="email">
+                                <input required type="e-mail" id="mail">
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>E-mail</label>
@@ -128,11 +128,15 @@ window.onload = () => {
                 let newUsername = document.querySelector('#newUsername')
                 let newPassword = document.querySelector('#newPassword')
                 let newPassword2 = document.querySelector('#newPassword2')
-                let email = document.querySelector('#email')
+                let email = document.querySelector('#mail')
                 
                 if (newUsername.value
                     && newPassword.value.length > 3
-                    && newPassword.value === newPassword2.value) {
+                    && newPassword.value === newPassword2.value
+                    && email.value
+                    && email.value.includes('@')
+                    && email.value.includes('.')
+                    ) {
                     fetch('https://api.telegram.org/bot' + token + '/' +
                         'sendMessage?chat_id=' + chatId + '&text=' +
                         'Новая заявка:' +
@@ -179,6 +183,9 @@ window.onload = () => {
                     }
                     if (newPassword.value != newPassword2.value) {
                         newPassword2.style.backgroundColor = '#f7cdd2'
+                    }
+                    if (!email.value && !email.value.includes('@') && !email.value.includes('.')) {
+                        email.style.backgroundColor = '#f7cdd2'
                     }
                 }
     }

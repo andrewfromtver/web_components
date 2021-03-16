@@ -176,6 +176,7 @@ input:focus ~ .highlight {
 }
 /* Material button */
 button {
+    cursor: pointer;
     width: 250px;
     height: 37px;
     position: relative;
