@@ -229,25 +229,25 @@ window.onload = () => {
                                     <img src="./activities.png" alt="activities">
                                     <div class="userdata">
                                         <div class="group">      
-                                            <input required id="projects">
+                                            <input class="disabled" disabled required id="projects">
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
                                             <label>Total projects</label>
                                         </div> 
                                         <div class="group">      
-                                            <input required id="devtime">
+                                            <input class="disabled" disabled required id="devtime">
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
                                             <label>Total dev. time</label>
                                         </div>
                                         <div class="group">      
-                                            <input required id="deployments">
+                                            <input class="disabled" disabled required id="deployments">
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
                                             <label>Total deployments</label>
                                         </div>
                                         <div class="group">      
-                                            <input required id="tests">
+                                            <input class="disabled" disabled required id="tests">
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
                                             <label>Total passed tests</label>
@@ -351,25 +351,25 @@ window.onload = () => {
                                     <img src="./contacts.png" alt="onetime">
                                     <div class="userdata">
                                         <div class="group">      
-                                            <input required id="phone">
+                                            <input class="disabled" disabled required id="phone">
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
                                             <label>Phone</label>
                                         </div>
                                         <div class="group">      
-                                            <input required id="email">
+                                            <input class="disabled" disabled required id="email">
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
                                             <label>E-mail</label>
                                         </div>
                                         <div class="group">      
-                                            <input required id="site">
+                                            <input class="disabled" disabled required id="site">
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
                                             <label>Website link</label>
                                         </div>
                                         <div class="group">      
-                                            <input required id="social">
+                                            <input class="disabled" disabled required id="social">
                                             <span class="highlight"></span>
                                             <span class="bar"></span>
                                             <label>Social network link</label>

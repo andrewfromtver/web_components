@@ -78,7 +78,7 @@ window.onload = () => {
                             </div>
                             <br>
                             <button id="create">
-                                <span>Create</span></button>
+                                <span>Request</span></button>
                             </button>
                         </form>
                         <form>
