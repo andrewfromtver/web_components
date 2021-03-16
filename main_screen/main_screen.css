@@ -302,7 +302,7 @@ tbody > tr > td {
 	content: '';
 	border-left: 6px solid transparent;
 	border-right: 6px solid transparent;
-	border-bottom: 6px solid #eeeeee;
+	border-top: 6px solid #eeeeee;
 	pointer-events: none;
 }
 
@@ -315,7 +315,7 @@ tbody > tr > td {
 	content: '';
 	border-left: 6px solid transparent;
 	border-right: 6px solid transparent;
-	border-top: 6px solid #eeeeee;
+	border-bottom: 6px solid #eeeeee;
 	pointer-events: none;
 }
 
