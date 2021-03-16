@@ -249,6 +249,31 @@ tbody > tr > td {
     opacity: 0.5;
 }
 
+.up__btn > img {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    margin: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 50px #333333;
+    opacity: 0.93;
+}
+
+.up__btn > img:active {
+    width: 40px;
+    height: 40px;
+    margin: 40px;
+    box-shadow: none;
+}
+
+.up__btn > img:hover, .up__btn > img:focus {
+    box-shadow: 0 0 50px #aaaaaa;
+}
+
 /* Material select */
 input, select {
     appearance: none;
