@@ -369,7 +369,7 @@ input, select {
 .select-text:valid:not(focus) ~ .select-label {
     background: #0589ed;
 }
-.select-text:active {
+.select-text:focus {
     border-bottom: 3px solid #0589ed;
 }  
 /* Material input */
