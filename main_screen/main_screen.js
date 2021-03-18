@@ -100,18 +100,8 @@ window.onload = () => {
                                 datasets: [{
                                     label: 'Total items',
                                     data: JSON.parse(sessionStorage.userData).activities,
-                                    backgroundColor: [
-                                        'rgba(255, 99, 132, 0.2)',
-                                        'rgba(54, 162, 235, 0.2)',
-                                        'rgba(255, 206, 86, 0.2)',
-                                        'rgba(75, 192, 192, 0.2)'
-                                    ],
-                                    borderColor: [
-                                        'rgba(255, 99, 132, 1)',
-                                        'rgba(54, 162, 235, 1)',
-                                        'rgba(255, 206, 86, 1)',
-                                        'rgba(75, 192, 192, 1)'
-                                    ]
+                                    backgroundColor: ['#D44A39', '#4381F7', '#F59131', '#6E39D4'],
+                                    borderColor: ['#D44A39', '#4381F7', '#F59131', '#6E39D4']
                                 }]
                             },
                             options: {
@@ -371,18 +361,8 @@ window.onload = () => {
                                 datasets: [{
                                     label: 'Total items',
                                     data: JSON.parse(sessionStorage.userData).activities,
-                                    backgroundColor: [
-                                        'rgba(255, 99, 132, 0.2)',
-                                        'rgba(54, 162, 235, 0.2)',
-                                        'rgba(255, 206, 86, 0.2)',
-                                        'rgba(75, 192, 192, 0.2)'
-                                    ],
-                                    borderColor: [
-                                        'rgba(255, 99, 132, 1)',
-                                        'rgba(54, 162, 235, 1)',
-                                        'rgba(255, 206, 86, 1)',
-                                        'rgba(75, 192, 192, 1)'
-                                    ]
+                                    backgroundColor: ['#D44A39', '#4381F7', '#F59131', '#6E39D4'],
+                                    borderColor: ['#D44A39', '#4381F7', '#F59131', '#6E39D4']
                                 }]
                             },
                             options: {
