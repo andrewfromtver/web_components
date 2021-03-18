@@ -271,6 +271,7 @@ tbody > tr > td {
     box-shadow: 0 0 50px #333333;
     opacity: 0.93;
     z-index: 999;
+    border: 3px solid #ffffff;
 }
 
 .up__btn > img:active {
@@ -333,7 +334,7 @@ input, select {
 .select {
     margin-bottom:20px;
     position: relative;
-}  
+}
 .select-text {
     position: relative;
     background-color: transparent;
@@ -379,6 +380,9 @@ input, select {
 .select-text:valid:not(focus) ~ .select-label {
     background: #0589ed;
 }
+.select-text:active {
+    border-bottom: 3px solid #0589ed;
+}  
 /* Material input */
 .group { 
     position:relative; 
