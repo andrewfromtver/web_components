@@ -70,8 +70,8 @@ window.onload = () => {
                                         <thead>
                                             <tr>
                                                 <th id="asc" class="sort__description" onclick="sortSubjects('description', this.id)">Description</th>
-                                                <th id="asc" class="sort__priority" onclick="sortSubjects('priority', this.id)">Priority</th>
-                                                <th id="asc" class="sort__type" onclick="sortSubjects('type', this.id)">Type</th>
+                                                <th>Priority</th>
+                                                <th>Type</th>
                                             </tr>
                                         </thead>
                                         <tbody class="subjects">
