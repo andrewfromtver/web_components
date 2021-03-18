@@ -8,17 +8,17 @@ window.onload = () => {
         event.preventDefault()
     
         const username = document.querySelector('#username')
-        username.oninput = function() { this.style.backgroundColor = '' }
+        username.oninput = function() { this.style.border = '' }
         const password = document.querySelector('#password')
-        password.oninput = function() { this.style.backgroundColor = '' }
+        password.oninput = function() { this.style.border = '' }
     
         if (username.value && password.value) {
             let userData = []
             fetch('https://spreadsheets.google.com/feeds/cells/1TVPaJbgPBHSpcan18Z5QERA6PNPj9UBxc6PoO-n436g/1/public/full?alt=json')
                 .then(function(value){
                     if(value.status !== 200){
-                        password.style.backgroundColor = '#f7cdd2'
-                        username.style.backgroundColor = '#f7cdd2'
+                        password.style.border = '3px solid #f7cdd2'
+                        username.style.border = '3px solid #f7cdd2'
                         return Promise.reject(new Error('Ошибка'))
                     }
                         return value.json();
@@ -36,18 +36,18 @@ window.onload = () => {
                             }, 450)
                         }
                         else {
-                            username.style.backgroundColor = '#f7cdd2'
-                            password.style.backgroundColor = '#f7cdd2'
+                            username.style.border = '3px solid #f7cdd2'
+                            password.style.border = '3px solid #f7cdd2'
                         }
                     })
                 })
         }
         else {
             if (!username.value) {
-                username.style.backgroundColor = '#f7cdd2'
+                username.style.border = '3px solid #f7cdd2'
             }
             if (!password.value) {
-                password.style.backgroundColor = '#f7cdd2'
+                password.style.border = '3px solid #f7cdd2'
             }
         }
     }
@@ -98,13 +98,16 @@ window.onload = () => {
                 document.querySelector('.login__form').style.display = 'none';
                 document.querySelector('.help').style.display = 'none'
                 document.querySelector('#newUsername').oninput = function() {
-                    this.style.backgroundColor = ''
+                    this.style.border = ''
                 }
                 document.querySelector('#newPassword').oninput = function() {
-                    this.style.backgroundColor = ''
+                    this.style.border = ''
                 }
                 document.querySelector('#newPassword2').oninput = function() {
-                    this.style.backgroundColor = ''
+                    this.style.border = ''
+                }
+                document.querySelector('#mail').oninput = function() {
+                    this.style.border = ''
                 }
                 document.querySelector('#create').onclick = () => { createNewAcc() }
                 document.querySelector('#cancel').onclick = () => {
@@ -112,6 +115,10 @@ window.onload = () => {
                     document.querySelector('.login__form').style.display = 'block'
                     document.querySelector('.help').style.display = 'block'
                     document.querySelector('.request__form').remove()
+                    const username = document.querySelector('#username')
+                    username.oninput = function() { this.style.border = '' }
+                    const password = document.querySelector('#password')
+                    password.oninput = function() { this.style.border = '' }
                 }
     }
     createNewAcc = () => {
@@ -175,17 +182,17 @@ window.onload = () => {
                 }
                 else {
                     if (!newUsername.value) {
-                        newUsername.style.backgroundColor = '#f7cdd2'
+                        newUsername.style.border = '3px solid #f7cdd2'
                     }
                     if (newPassword.value.length < 4) {
-                        newPassword.style.backgroundColor = '#f7cdd2'
-                        newPassword2.style.backgroundColor = '#f7cdd2'
+                        newPassword.style.border = '3px solid #f7cdd2'
+                        newPassword2.style.border = '3px solid #f7cdd2'
                     }
                     if (newPassword.value != newPassword2.value) {
-                        newPassword2.style.backgroundColor = '#f7cdd2'
+                        newPassword2.style.border = '3px solid #f7cdd2'
                     }
                     if (!email.value && !email.value.includes('@') && !email.value.includes('.')) {
-                        email.style.backgroundColor = '#f7cdd2'
+                        email.style.border = '3px solid #f7cdd2'
                     }
                 }
     }
