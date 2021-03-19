@@ -441,14 +441,7 @@ window.onload = () => {
                                 <div class="title">Our headquarters</div>
                                 <br>
                                 <div>
-                                    <iframe 
-                                        id="map" 
-                                        width="96%" 
-                                        height="400px" 
-                                        frameborder="0" 
-                                        scrolling="no" 
-                                        src="https://www.openstreetmap.org/export/embed.html?bbox=35.834464,56.83654,35.864464,56.86654&amp;layer=mapquest&amp;marker=56.85154,35.849464"
-                                    ></iframe>
+                                    <iframe src="https://yandex.ru/map-widget/v1/-/CCUUMSCBgC" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
                                 </div>
                                 <br>
                                 <div class="reports">
