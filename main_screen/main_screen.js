@@ -441,7 +441,16 @@ window.onload = () => {
                                 <div class="title">Our headquarters</div>
                                 <br>
                                 <div>
-                                    <iframe src="https://yandex.ru/map-widget/v1/-/CCUUMSCBgC" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+                                    <iframe 
+                                        id="map" 
+                                        width="96%" 
+                                        height="400px" 
+                                        frameborder="0" 
+                                        scrolling="no"
+                                        src="https://yandex.ru/map-widget/v1/-/CCUUMSCBgC" 
+                                        allowfullscreen="false" 
+                                        >
+                                    </iframe>
                                 </div>
                                 <br>
                                 <div class="reports">
