@@ -51,8 +51,9 @@ window.onload = () => {
             }
         }
     }
-    requestNewAcc = () => {
+    newAccForm = () => {
                 event.preventDefault()
+
                 let inner = `
                     <div class="container request__form">
                         <div class="title">New account</div>
@@ -83,12 +84,12 @@ window.onload = () => {
                                 <label>E-mail</label>
                             </div>
                             <br>
-                            <button id="create">
+                            <button id="create" onclick="newAccRequest()">
                                 <span>Request</span></button>
                             </button>
                         </form>
                         <form>
-                            <button id="cancel">
+                            <button id="cancel" onclick="closeAccForm()">
                                 <span>Cancel</span></button>
                             </button>
                         </form>
@@ -96,7 +97,6 @@ window.onload = () => {
                 `
                 document.querySelector('body').innerHTML += inner
                 document.querySelector('.login__form').style.display = 'none';
-                document.querySelector('.help').style.display = 'none'
                 document.querySelector('#newUsername').oninput = function() {
                     this.style.border = ''
                 }
@@ -109,19 +109,8 @@ window.onload = () => {
                 document.querySelector('#mail').oninput = function() {
                     this.style.border = ''
                 }
-                document.querySelector('#create').onclick = () => { createNewAcc() }
-                document.querySelector('#cancel').onclick = () => {
-                    event.preventDefault()
-                    document.querySelector('.login__form').style.display = 'block'
-                    document.querySelector('.help').style.display = 'block'
-                    document.querySelector('.request__form').remove()
-                    const username = document.querySelector('#username')
-                    username.oninput = function() { this.style.border = '' }
-                    const password = document.querySelector('#password')
-                    password.oninput = function() { this.style.border = '' }
-                }
     }
-    createNewAcc = () => {
+    newAccRequest = () => {
                 event.preventDefault()
             
                 let env_var = [
@@ -171,7 +160,6 @@ window.onload = () => {
                             document.querySelector('#cancel').onclick = () => {
                                 event.preventDefault()
                                 document.querySelector('.login__form').style.display = 'block'
-                                document.querySelector('.help').style.display = 'block'
                                 document.querySelector('.request__form').remove()
                             }
                         }
@@ -191,50 +179,18 @@ window.onload = () => {
                     if (newPassword.value != newPassword2.value) {
                         newPassword2.style.border = '3px solid #f7cdd2'
                     }
-                    if (!email.value && !email.value.includes('@') && !email.value.includes('.')) {
+                    if (!email.value || !email.value.includes('@') || !email.value.includes('.')) {
                         email.style.border = '3px solid #f7cdd2'
                     }
                 }
     }
-    info = () => {
-                if (document.querySelector('.info__form')) {
-                    document.querySelector('.login__form').style.display = 'block'
-                    document.querySelector('.help').style.display = 'block'
-                    document.querySelector('.info__form').remove()
-                }
-                else if (!document.querySelector('.request__form') && !document.querySelector('.info__form')) {
-                    document.querySelector('.login__form').style.display = 'none'
-                    document.querySelector('.help').style.display = 'none';
-                    const br = document.createElement('br')
-                    const br2 = document.createElement('br')
-                    const infoContainer = document.createElement('div')
-                    infoContainer.className = 'container info__form'
-                    const title = document.createElement('div')
-                    title.className = 'title'
-                    title.innerText = 'About this service:'
-                    const infoForm = document.createElement('form')
-                    const about = document.createElement('div')
-                    about.className = 'about'
-                    about.innerText = `Here you can track the progress of all the projects we do for you. 
-                        In real time, reports on the work done are generated. 
-                        You can correct the terms of reference at any time and consult with our specialists.`
-                    const cancelBtn = document.createElement('button')
-                    cancelBtn.innerText = 'Back'
-                    cancelBtn.id = 'cancel'
-                    cancelBtn.onclick = () => {
-                        event.preventDefault()
-            
-                        document.querySelector('.login__form').style.display = 'block'
-                        document.querySelector('.help').style.display = 'block'
-                        infoContainer.remove()
-                    }
-                    infoContainer.appendChild(title)
-                    infoContainer.appendChild(br)
-                    infoForm.appendChild(about)
-                    infoForm.appendChild(br2)
-                    infoForm.appendChild(cancelBtn)
-                    infoContainer.appendChild(infoForm)
-                    document.body.appendChild(infoContainer)
-                }
+    closeAccForm = () => {
+        event.preventDefault()
+        document.querySelector('.login__form').style.display = 'block'
+        document.querySelector('.request__form').remove()
+        const username = document.querySelector('#username')
+        username.oninput = function() { this.style.border = '' }
+        const password = document.querySelector('#password')
+        password.oninput = function() { this.style.border = '' }
     }
 }

@@ -143,17 +143,8 @@ body {
     margin-bottom: 40px;
 }
 
-#save:active {
-    background-color: #ffffff;
-    color: #0589ed;
-}
-
 #clear {
     background-color: #7a98af;
-}
-#clear:active {
-    background-color: #ffffff;
-    color: #7a98af;
 }
 
 .tariff {
@@ -253,12 +244,12 @@ tbody > tr > td {
     right: 0;
     width: 50px;
     height: 50px;
-    margin: 35px;
+    margin: 40px;
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
     box-shadow: 0 0 50px #333333;
-    opacity: 0.93;
+    opacity: 0.95;
     z-index: 999;
     border: 3px solid #ffffff;
 }
@@ -266,7 +257,7 @@ tbody > tr > td {
 .up__btn > img:active {
     width: 40px;
     height: 40px;
-    margin: 40px;
+    margin: 45px;
     box-shadow: none;
 }
 
